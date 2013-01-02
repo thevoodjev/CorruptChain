@@ -27,3 +27,9 @@ Keep a Changelog, and the project uses semantic versioning.
 
 ### Added
 
+- The empty degraded class and its rule: status empty, or ok with no output,
+  or result_count zero.
+
+## [1.0.1] - 2023-08-29
+
+### Fixed
