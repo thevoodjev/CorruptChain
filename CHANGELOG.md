@@ -8,3 +8,9 @@ Keep a Changelog, and the project uses semantic versioning.
 ### Changed
 
 - Unknown verdict wording is under review for the next patch.
+
+## [1.0.4] - 2026-07-21
+
+### Fixed
+
+- The inferred edge finder no longer matches a value that appears only in a
