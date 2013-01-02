@@ -21,3 +21,9 @@ Keep a Changelog, and the project uses semantic versioning.
 ### Fixed
 
 - A trace with no answer step reports unknown with a reason line instead of an
+  empty verdict block.
+
+## [1.0.2] - 2024-10-15
+
+### Added
+
