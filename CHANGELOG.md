@@ -33,3 +33,9 @@ Keep a Changelog, and the project uses semantic versioning.
 ## [1.0.1] - 2023-08-29
 
 ### Fixed
+
+- Inferred edges ignore formatting-only coincidences in short outputs.
+
+## [1.0.0] - 2022-12-06
+
+### Added
