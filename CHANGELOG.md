@@ -39,3 +39,9 @@ Keep a Changelog, and the project uses semantic versioning.
 ## [1.0.0] - 2022-12-06
 
 ### Added
+
+- Stable CLI contract for graph, taint, verdict, and version, exit codes 0/1/2.
+- Tests pin the taint chain across the bundled traces.
+
+## [0.9.5] - 2021-05-11
+
