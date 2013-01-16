@@ -52,3 +52,9 @@ Keep a Changelog, and the project uses semantic versioning.
 ## [0.9.0] - 2020-10-27
 
 ### Added
+
+- Reason chains record whether each hop was declared or inferred.
+
+## [0.8.0] - 2019-07-23
+
+### Added
