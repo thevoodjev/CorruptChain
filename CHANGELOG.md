@@ -58,3 +58,9 @@ Keep a Changelog, and the project uses semantic versioning.
 ## [0.8.0] - 2019-07-23
 
 ### Added
+
+- Clean and contaminated trace fixtures.
+- README walkthrough captured from a real run.
+
+## [0.7.0] - 2018-11-06
+
