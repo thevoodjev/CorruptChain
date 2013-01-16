@@ -45,3 +45,10 @@ Keep a Changelog, and the project uses semantic versioning.
 
 ## [0.9.5] - 2021-05-11
 
+### Changed
+
+- Maintenance release: documentation pass and fixture refresh.
+
+## [0.9.0] - 2020-10-27
+
+### Added
