@@ -64,3 +64,9 @@ Keep a Changelog, and the project uses semantic versioning.
 
 ## [0.7.0] - 2018-11-06
 
+### Added
+
+- Test suite covering the parser, the graph, taint, and the CLI.
+
+## [0.6.0] - 2017-03-14
+
