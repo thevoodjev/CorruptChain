@@ -70,3 +70,9 @@ Keep a Changelog, and the project uses semantic versioning.
 
 ## [0.6.0] - 2017-03-14
 
+### Added
+
+- Report renderer with stable finding lines.
+- CLI entry point with subcommands.
+
+## [0.5.0] - 2016-06-28
