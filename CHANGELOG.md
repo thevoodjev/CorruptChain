@@ -76,3 +76,10 @@ Keep a Changelog, and the project uses semantic versioning.
 - CLI entry point with subcommands.
 
 ## [0.5.0] - 2016-06-28
+
+### Added
+
+- Verdicts: grounded, tainted, unknown.
+
+## [0.4.0] - 2015-09-08
+
