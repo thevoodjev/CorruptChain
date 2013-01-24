@@ -83,3 +83,9 @@ Keep a Changelog, and the project uses semantic versioning.
 
 ## [0.4.0] - 2015-09-08
 
+### Added
+
+- Forward taint propagation with the full path to each affected step.
+
+## [0.3.0] - 2014-05-20
+
