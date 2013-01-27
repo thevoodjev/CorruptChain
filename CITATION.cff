@@ -3,3 +3,4 @@ message: "If you use this software, please cite it using these metadata."
 title: CorruptChain
 abstract: >-
   A command line tool that reads an agent run trace, builds its data
+  dependency graph, propagates taint forward from degraded tool outputs, and
