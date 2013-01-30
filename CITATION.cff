@@ -5,3 +5,5 @@ abstract: >-
   A command line tool that reads an agent run trace, builds its data
   dependency graph, propagates taint forward from degraded tool outputs, and
   judges whether the final answer rests on working data.
+type: software
+authors:
