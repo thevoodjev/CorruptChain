@@ -7,3 +7,4 @@ abstract: >-
   judges whether the final answer rests on working data.
 type: software
 authors:
+  - name: "the CorruptChain authors"
