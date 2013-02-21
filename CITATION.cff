@@ -9,3 +9,4 @@ type: software
 authors:
   - name: "the CorruptChain authors"
 version: "0.1.0"
+license: MIT
