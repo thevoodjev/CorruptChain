@@ -13,3 +13,4 @@ license: MIT
 repository-code: "[REPOSITORY URL]"
 keywords:
   - agent
+  - trace
