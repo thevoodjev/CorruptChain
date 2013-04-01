@@ -13,3 +13,11 @@ no network access and no wall-clock time in the output.
 ## What a trace looks like
 
 ```json
+{
+  "question": "Which region had the highest error rate last week?",
+  "steps": [
+    {"id": "s1", "kind": "tool", "name": "list_regions", "status": "ok",
+     "output": "emea, apac, amer", "references": []},
+    {"id": "s2", "kind": "tool", "name": "query_metrics", "status": "empty",
+     "output": "", "references": ["s1"]}
+  ]
