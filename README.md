@@ -44,3 +44,11 @@ Exit codes: `0` clean or grounded, `1` tainted, `2` usage or parse error.
 An edge from step A to step B means B consumed A's output. CorruptChain finds
 edges two ways and never treats them as equal:
 
+- **declared** - B listed A in its `references`. The agent is stating outright
+  that it used A. Strong evidence.
+- **inferred** - B did not list A, but A's output value appears verbatim inside
+  B's output. Weaker evidence: a coincidence in formatting is possible.
+
+Every taint path records, hop by hop, whether the edge that carried the taint
+was declared or inferred, so a reader can weigh the path.
+
