@@ -21,3 +21,11 @@ no network access and no wall-clock time in the output.
     {"id": "s2", "kind": "tool", "name": "query_metrics", "status": "empty",
      "output": "", "references": ["s1"]}
   ]
+}
+```
+
+Each step declares an id, a kind, a status, and the ids it consumed in
+`references`. The parser is strict about structure and names the field when a
+step is malformed.
+
+## Commands
