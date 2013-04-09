@@ -29,3 +29,10 @@ Each step declares an id, a kind, a status, and the ids it consumed in
 step is malformed.
 
 ## Commands
+
+| Command | What it prints |
+|---|---|
+| `graph` | the dependency graph with declared and inferred edges |
+| `taint` | degraded sources and the full taint path to every affected step |
+| `verdict` | grounded, tainted, or unknown, for the final answer step |
+| `version` | the version string |
