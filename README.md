@@ -36,3 +36,11 @@ step is malformed.
 | `taint` | degraded sources and the full taint path to every affected step |
 | `verdict` | grounded, tainted, or unknown, for the final answer step |
 | `version` | the version string |
+
+Exit codes: `0` clean or grounded, `1` tainted, `2` usage or parse error.
+
+## Declared is not inferred
+
+An edge from step A to step B means B consumed A's output. CorruptChain finds
+edges two ways and never treats them as equal:
+
