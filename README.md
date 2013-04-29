@@ -52,3 +52,10 @@ edges two ways and never treats them as equal:
 Every taint path records, hop by hop, whether the edge that carried the taint
 was declared or inferred, so a reader can weigh the path.
 
+## A real run
+
+`python -m corruptchain taint samples/contaminated_trace.json`:
+
+```
+degraded sources:
+  s2 [empty] tool=query_metrics: empty result: status "empty", or an ok status with no output, or result_count 0
