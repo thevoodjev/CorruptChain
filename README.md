@@ -59,3 +59,11 @@ was declared or inferred, so a reader can weigh the path.
 ```
 degraded sources:
   s2 [empty] tool=query_metrics: empty result: status "empty", or an ok status with no output, or result_count 0
+
+tainted steps (downstream of a degraded source):
+  s3: via declared path  s2 -> s3
+  s5: via inferred path  s2 -> s3 -> s5
+  s6: via inferred path  s2 -> s3 -> s5 -> s6
+
+taint summary: 1 degraded, 4 tainted of 6 steps
+```
