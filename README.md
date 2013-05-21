@@ -82,3 +82,11 @@ The same command on `samples/clean_trace.json` prints `verdict: grounded` and
 exits 0: every source the answer depends on classified clean.
 
 ## The graph
+
+`python -m corruptchain graph samples/contaminated_trace.json`:
+
+```
+question: Which region had the highest error rate last week, and by how much?
+steps: 6
+
+edges (source -> consumer, how):
