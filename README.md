@@ -75,3 +75,10 @@ verdict: tainted
 answer step: s6
 origin: s2 [empty]
 evidence: inferred path
+detail: final answer traces to empty source 's2' through an inferred path
+```
+
+The same command on `samples/clean_trace.json` prints `verdict: grounded` and
+exits 0: every source the answer depends on classified clean.
+
+## The graph
