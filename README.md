@@ -67,3 +67,11 @@ tainted steps (downstream of a degraded source):
 
 taint summary: 1 degraded, 4 tainted of 6 steps
 ```
+
+`python -m corruptchain verdict samples/contaminated_trace.json` (exit 1):
+
+```
+verdict: tainted
+answer step: s6
+origin: s2 [empty]
+evidence: inferred path
