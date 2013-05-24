@@ -90,3 +90,11 @@ question: Which region had the highest error rate last week, and by how much?
 steps: 6
 
 edges (source -> consumer, how):
+  s1 -> s2  [declared]
+  s2 -> s3  [declared]
+  s1 -> s4  [declared]
+  s4 -> s5  [declared]
+  s5 -> s6  [declared]
+  s3 -> s5  [inferred]
+
+edge count: 6 (5 declared, 1 inferred)
