@@ -98,3 +98,10 @@ edges (source -> consumer, how):
   s3 -> s5  [inferred]
 
 edge count: 6 (5 declared, 1 inferred)
+```
+
+## Degraded sources
+
+A degraded source is the origin of taint: a tool step whose produced data is
+not usable. Each class is a stated rule applied to fields the trace declared,
+so the same step always gets the same classification. `empty` is the most
