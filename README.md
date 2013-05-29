@@ -113,3 +113,11 @@ carry taint only by depending on something degraded.
 
 | Verdict | Rule |
 |---|---|
+| grounded | the final answer step exists and is not tainted |
+| tainted | the final answer depends, directly or transitively, on a degraded source |
+| unknown | the trace lacks a final answer step, or the data cannot support a call |
+
+A tainted verdict is the finding the tool exists for: the pipeline looked
+healthy at every step and the answer is still wrong.
+
+## Repository layout
