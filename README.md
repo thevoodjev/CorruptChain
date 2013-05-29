@@ -121,3 +121,10 @@ A tainted verdict is the finding the tool exists for: the pipeline looked
 healthy at every step and the answer is still wrong.
 
 ## Repository layout
+
+```
+corruptchain/
+  src/corruptchain/
+    trace.py       strict trace parsing into ordered steps
+    degraded.py    the degraded-source classes and their rules
+    depends.py     dependency graph, declared and inferred edges
