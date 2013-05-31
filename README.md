@@ -128,3 +128,11 @@ corruptchain/
     trace.py       strict trace parsing into ordered steps
     degraded.py    the degraded-source classes and their rules
     depends.py     dependency graph, declared and inferred edges
+    taint.py       forward taint propagation with a reason chain
+    verdict.py     grounded / tainted / unknown decision
+    report.py      line-oriented deterministic rendering
+    cli.py         subcommands and exit codes
+  samples/         clean and contaminated trace fixtures
+  tests/           suite per module and for the CLI
+  scripts/verify.py  the eight check quality gate
+  docs/assets/     logo and taint path diagram
