@@ -3,3 +3,6 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
+name = "corruptchain"
+version = "1.0.4"
+description = "Trace how a silent tool failure taints a whole agent run."
