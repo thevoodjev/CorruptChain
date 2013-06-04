@@ -8,3 +8,5 @@ version = "1.0.4"
 description = "Trace how a silent tool failure taints a whole agent run."
 readme = "README.md"
 requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "CorruptChain contributors" }]
