@@ -12,3 +12,6 @@ license = { text = "MIT" }
 authors = [{ name = "CorruptChain contributors" }]
 keywords = ["agent", "trace", "taint", "provenance", "audit"]
 classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
