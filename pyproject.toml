@@ -24,3 +24,5 @@ dependencies = []
 
 [project.scripts]
 corruptchain = "corruptchain.cli:main"
+
+[tool.setuptools.packages.find]
