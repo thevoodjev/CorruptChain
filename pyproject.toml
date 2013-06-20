@@ -22,3 +22,5 @@ classifiers = [
 ]
 dependencies = []
 
+[project.scripts]
+corruptchain = "corruptchain.cli:main"
