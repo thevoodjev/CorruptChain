@@ -7,3 +7,9 @@ answer steps carry taint only by depending on something degraded, which is the
 job of taint.py, not this module.
 
 The five classes and their rules:
+
+    clean       A tool step whose status is "ok" and whose output is non empty.
+                Reason and answer steps are also clean at the source; they
+                produce no external data of their own.
+
+    error       status is "error". The tool failed. Its output, if any, is an
