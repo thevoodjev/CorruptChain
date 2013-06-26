@@ -13,3 +13,8 @@ The five classes and their rules:
                 produce no external data of their own.
 
     error       status is "error". The tool failed. Its output, if any, is an
+                error message, not data.
+
+    empty       status is "empty", or status is "ok" with an empty output, or
+                result_count is 0. A tool that returned nothing while reporting
+                success is the exact silent hole this project chases.
