@@ -18,3 +18,8 @@ The five classes and their rules:
     empty       status is "empty", or status is "ok" with an empty output, or
                 result_count is 0. A tool that returned nothing while reporting
                 success is the exact silent hole this project chases.
+
+    truncated   status is "truncated". The tool returned a prefix of a larger
+                result and said so. Later steps reasoning on it may be missing
+                the part that mattered.
+
