@@ -23,3 +23,8 @@ The five classes and their rules:
                 result and said so. Later steps reasoning on it may be missing
                 the part that mattered.
 
+    partial     status is "partial", or result_count and expected_count are
+                both present and result_count is less than expected_count. One
+                page of several, or a subset of the intended set.
+
+Precedence, applied top to bottom, so a step with several signals gets the most
