@@ -28,3 +28,9 @@ The five classes and their rules:
                 page of several, or a subset of the intended set.
 
 Precedence, applied top to bottom, so a step with several signals gets the most
+severe: error, then empty, then truncated, then partial, then clean.
+"""
+
+from __future__ import annotations
+
+from corruptchain.trace import Step
