@@ -39,3 +39,8 @@ CLEAN = "clean"
 ERROR = "error"
 EMPTY = "empty"
 TRUNCATED = "truncated"
+PARTIAL = "partial"
+
+DEGRADED_CLASSES = (ERROR, EMPTY, TRUNCATED, PARTIAL)
+
+# One sentence per class, printed in reports so the reason is never implicit.
