@@ -34,3 +34,8 @@ severe: error, then empty, then truncated, then partial, then clean.
 from __future__ import annotations
 
 from corruptchain.trace import Step
+
+CLEAN = "clean"
+ERROR = "error"
+EMPTY = "empty"
+TRUNCATED = "truncated"
