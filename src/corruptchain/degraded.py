@@ -50,3 +50,8 @@ RULE_TEXT = {
            'or result_count 0',
     TRUNCATED: 'status "truncated": a prefix of a larger result was returned',
     PARTIAL: 'partial result: status "partial", or result_count below '
+             'expected_count',
+    CLEAN: "clean: an ok status with a non empty result",
+}
+
+
