@@ -71,3 +71,8 @@ def classify(step: Step) -> str:
     if status == EMPTY:
         return EMPTY
     if status == "ok" and step.output.strip() == "":
+        return EMPTY
+    if step.result_count == 0:
+        return EMPTY
+
+    if status == TRUNCATED:
