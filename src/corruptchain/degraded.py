@@ -66,3 +66,8 @@ def classify(step: Step) -> str:
     if status == ERROR:
         return ERROR
 
+    # Empty: an explicit empty status, an ok status that produced nothing, or a
+    # reported result count of zero.
+    if status == EMPTY:
+        return EMPTY
+    if status == "ok" and step.output.strip() == "":
