@@ -76,3 +76,8 @@ def classify(step: Step) -> str:
         return EMPTY
 
     if status == TRUNCATED:
+        return TRUNCATED
+
+    if status == PARTIAL:
+        return PARTIAL
+    if (step.result_count is not None
