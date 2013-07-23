@@ -55,3 +55,8 @@ RULE_TEXT = {
 }
 
 
+def classify(step: Step) -> str:
+    """Return the class of a single step in isolation."""
+    if not step.is_tool:
+        # Non tool steps hold no source data; they cannot be degraded here.
+        return CLEAN
