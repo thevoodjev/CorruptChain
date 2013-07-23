@@ -60,3 +60,9 @@ def classify(step: Step) -> str:
     if not step.is_tool:
         # Non tool steps hold no source data; they cannot be degraded here.
         return CLEAN
+
+    status = step.status
+
+    if status == ERROR:
+        return ERROR
+
