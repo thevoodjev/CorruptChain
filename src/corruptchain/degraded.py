@@ -44,3 +44,9 @@ PARTIAL = "partial"
 DEGRADED_CLASSES = (ERROR, EMPTY, TRUNCATED, PARTIAL)
 
 # One sentence per class, printed in reports so the reason is never implicit.
+RULE_TEXT = {
+    ERROR: 'status "error": the tool failed and produced no usable data',
+    EMPTY: 'empty result: status "empty", or an ok status with no output, '
+           'or result_count 0',
+    TRUNCATED: 'status "truncated": a prefix of a larger result was returned',
+    PARTIAL: 'partial result: status "partial", or result_count below '
