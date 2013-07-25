@@ -19,3 +19,13 @@ Each step object has these fields:
                partial rules in degraded.py.
     expected_count an optional integer for what a complete result would hold,
                used by the partial rule.
+
+The final step, the one whose kind is "answer", is the run's final answer.
+
+Parsing is strict: unknown top level keys and unknown step kinds raise
+TraceError, because a silently ignored field is exactly the class of defect
+this tool exists to catch. Ordering is preserved as written; ids must be
+unique. No wall-clock time and no randomness enter the parse, so the same trace
+always yields the same Trace.
+"""
+
