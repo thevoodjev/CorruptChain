@@ -48,3 +48,13 @@ _STEP_KEYS = {
 }
 
 
+class TraceError(ValueError):
+    """Raised when a trace document is malformed."""
+
+
+@dataclass(frozen=True)
+class Step:
+    """One step in an agent run."""
+
+    id: str
+    kind: str
