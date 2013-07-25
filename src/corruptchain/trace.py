@@ -38,3 +38,13 @@ from pathlib import Path
 VALID_KINDS = ("tool", "reason", "answer")
 
 # Statuses a tool step may carry. "ok" is the only clean one; the rest are the
+# degradation signals degraded.py classifies.
+VALID_STATUSES = ("ok", "error", "empty", "truncated", "partial")
+
+_TOP_KEYS = {"question", "steps"}
+_STEP_KEYS = {
+    "id", "kind", "tool", "status", "references", "output",
+    "result_count", "expected_count",
+}
+
+
