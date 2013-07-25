@@ -29,3 +29,12 @@ unique. No wall-clock time and no randomness enter the parse, so the same trace
 always yields the same Trace.
 """
 
+from __future__ import annotations
+
+import json
+from dataclasses import dataclass, field
+from pathlib import Path
+
+VALID_KINDS = ("tool", "reason", "answer")
+
+# Statuses a tool step may carry. "ok" is the only clean one; the rest are the
