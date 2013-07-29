@@ -58,3 +58,12 @@ class Step:
 
     id: str
     kind: str
+    tool: str | None
+    status: str | None
+    references: tuple[str, ...]
+    output: str
+    result_count: int | None
+    expected_count: int | None
+
+    @property
+    def is_answer(self) -> bool:
