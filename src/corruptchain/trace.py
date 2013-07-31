@@ -67,3 +67,13 @@ class Step:
 
     @property
     def is_answer(self) -> bool:
+        return self.kind == "answer"
+
+    @property
+    def is_tool(self) -> bool:
+        return self.kind == "tool"
+
+
+@dataclass(frozen=True)
+class Trace:
+    """A parsed agent run."""
