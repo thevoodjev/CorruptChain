@@ -77,3 +77,13 @@ class Step:
 @dataclass(frozen=True)
 class Trace:
     """A parsed agent run."""
+
+    question: str
+    steps: tuple[Step, ...]
+    _index: dict[str, Step] = field(default_factory=dict, compare=False)
+
+    def by_id(self, step_id: str) -> Step:
+        try:
+            return self._index[step_id]
+        except KeyError:
+            raise TraceError(f"unknown step id: {step_id!r}") from None
