@@ -96,3 +96,13 @@ class Trace:
         """The final answer step, or None if the trace declares none."""
         answers = [s for s in self.steps if s.is_answer]
         if not answers:
+            return None
+        return answers[-1]
+
+    def index_of(self, step_id: str) -> int:
+        for i, step in enumerate(self.steps):
+            if step.id == step_id:
+                return i
+        raise TraceError(f"unknown step id: {step_id!r}")
+
+
