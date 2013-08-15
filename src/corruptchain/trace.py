@@ -87,3 +87,12 @@ class Trace:
             return self._index[step_id]
         except KeyError:
             raise TraceError(f"unknown step id: {step_id!r}") from None
+
+    def has(self, step_id: str) -> bool:
+        return step_id in self._index
+
+    @property
+    def answer(self) -> Step | None:
+        """The final answer step, or None if the trace declares none."""
+        answers = [s for s in self.steps if s.is_answer]
+        if not answers:
