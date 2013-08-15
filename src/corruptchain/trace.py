@@ -106,3 +106,13 @@ class Trace:
         raise TraceError(f"unknown step id: {step_id!r}")
 
 
+def _require(cond: bool, message: str) -> None:
+    if not cond:
+        raise TraceError(message)
+
+
+def _parse_step(raw: object, position: int) -> Step:
+    _require(isinstance(raw, dict), f"step {position} is not an object")
+    assert isinstance(raw, dict)  # narrow for type checkers
+
+    unknown = set(raw) - _STEP_KEYS
