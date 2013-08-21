@@ -126,3 +126,12 @@ def _parse_step(raw: object, position: int) -> Step:
     kind = raw.get("kind")
     _require(kind in VALID_KINDS,
              f"step {step_id!r} has invalid kind: {kind!r}")
+    assert isinstance(kind, str)
+
+    tool = raw.get("tool")
+    if tool is not None:
+        _require(isinstance(tool, str), f"step {step_id!r} tool is not a string")
+
+    status = raw.get("status")
+    if status is not None:
+        _require(status in VALID_STATUSES,
