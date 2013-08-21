@@ -116,3 +116,13 @@ def _parse_step(raw: object, position: int) -> Step:
     assert isinstance(raw, dict)  # narrow for type checkers
 
     unknown = set(raw) - _STEP_KEYS
+    _require(not unknown, f"step {position} has unknown keys: {sorted(unknown)}")
+
+    step_id = raw.get("id")
+    _require(isinstance(step_id, str) and step_id != "",
+             f"step {position} has no string id")
+    assert isinstance(step_id, str)
+
+    kind = raw.get("kind")
+    _require(kind in VALID_KINDS,
+             f"step {step_id!r} has invalid kind: {kind!r}")
