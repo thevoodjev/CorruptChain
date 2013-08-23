@@ -135,3 +135,13 @@ def _parse_step(raw: object, position: int) -> Step:
     status = raw.get("status")
     if status is not None:
         _require(status in VALID_STATUSES,
+                 f"step {step_id!r} has invalid status: {status!r}")
+
+    refs_raw = raw.get("references", [])
+    _require(isinstance(refs_raw, list),
+             f"step {step_id!r} references is not a list")
+    references = tuple(str(r) for r in refs_raw)
+
+    output = raw.get("output", "")
+    _require(isinstance(output, str), f"step {step_id!r} output is not a string")
+
