@@ -145,3 +145,13 @@ def _parse_step(raw: object, position: int) -> Step:
     output = raw.get("output", "")
     _require(isinstance(output, str), f"step {step_id!r} output is not a string")
 
+    result_count = raw.get("result_count")
+    if result_count is not None:
+        _require(isinstance(result_count, int),
+                 f"step {step_id!r} result_count is not an integer")
+
+    expected_count = raw.get("expected_count")
+    if expected_count is not None:
+        _require(isinstance(expected_count, int),
+                 f"step {step_id!r} expected_count is not an integer")
+
