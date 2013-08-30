@@ -164,3 +164,13 @@ def _parse_step(raw: object, position: int) -> Step:
         output=output,
         result_count=result_count,
         expected_count=expected_count,
+    )
+
+
+def parse(text: str) -> Trace:
+    """Parse trace JSON text into a Trace, raising TraceError on any defect."""
+    try:
+        doc = json.loads(text)
+    except json.JSONDecodeError as exc:
+        raise TraceError(f"trace is not valid JSON: {exc}") from None
+
