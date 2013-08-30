@@ -174,3 +174,13 @@ def parse(text: str) -> Trace:
     except json.JSONDecodeError as exc:
         raise TraceError(f"trace is not valid JSON: {exc}") from None
 
+    _require(isinstance(doc, dict), "trace top level is not an object")
+    assert isinstance(doc, dict)
+
+    unknown = set(doc) - _TOP_KEYS
+    _require(not unknown, f"trace has unknown top level keys: {sorted(unknown)}")
+
+    question = doc.get("question", "")
+    _require(isinstance(question, str), "question is not a string")
+
+    steps_raw = doc.get("steps")
