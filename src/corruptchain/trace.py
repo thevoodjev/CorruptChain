@@ -155,3 +155,12 @@ def _parse_step(raw: object, position: int) -> Step:
         _require(isinstance(expected_count, int),
                  f"step {step_id!r} expected_count is not an integer")
 
+    return Step(
+        id=step_id,
+        kind=kind,
+        tool=tool,
+        status=status,
+        references=references,
+        output=output,
+        result_count=result_count,
+        expected_count=expected_count,
