@@ -30,3 +30,11 @@ from dataclasses import dataclass
 
 from corruptchain.trace import Trace
 
+DECLARED = "declared"
+INFERRED = "inferred"
+
+# Shorter outputs are too likely to collide to support an inferred edge.
+MIN_MATCH_LEN = 8
+
+
+@dataclass(frozen=True)
