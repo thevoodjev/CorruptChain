@@ -23,3 +23,10 @@ Inference is deliberately conservative to avoid false edges:
     - The match is a substring test against the whole earlier output, trimmed.
     - Only earlier steps can be sources, matching the acyclic order of a run.
 """
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+
+from corruptchain.trace import Trace
+
