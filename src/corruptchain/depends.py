@@ -16,3 +16,10 @@ established, and a report can list exactly which edges were inferred. When both
 a declaration and a value match exist for the same pair, the edge is declared,
 because the stronger evidence wins, and the value match is redundant.
 
+Inference is deliberately conservative to avoid false edges:
+
+    - Only outputs of at least MIN_MATCH_LEN characters are matched, so short
+      or empty strings never create edges.
+    - The match is a substring test against the whole earlier output, trimmed.
+    - Only earlier steps can be sources, matching the acyclic order of a run.
+"""
