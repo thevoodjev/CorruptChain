@@ -38,3 +38,10 @@ MIN_MATCH_LEN = 8
 
 
 @dataclass(frozen=True)
+class Edge:
+    """A dependency edge: consumer depends on source."""
+
+    source: str
+    consumer: str
+    how: str  # DECLARED or INFERRED
+
