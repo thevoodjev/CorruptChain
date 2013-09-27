@@ -53,3 +53,10 @@ class Edge:
 @dataclass(frozen=True)
 class Graph:
     """The dependency graph of a trace."""
+
+    edges: tuple[Edge, ...]
+
+    def sources_of(self, consumer: str) -> tuple[Edge, ...]:
+        """Edges feeding into a step."""
+        return tuple(e for e in self.edges if e.consumer == consumer)
+
