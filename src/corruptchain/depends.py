@@ -60,3 +60,10 @@ class Graph:
         """Edges feeding into a step."""
         return tuple(e for e in self.edges if e.consumer == consumer)
 
+    def consumers_of(self, source: str) -> tuple[Edge, ...]:
+        """Edges leaving a step."""
+        return tuple(e for e in self.edges if e.source == source)
+
+    @property
+    def declared(self) -> tuple[Edge, ...]:
+        return tuple(e for e in self.edges if e.how == DECLARED)
