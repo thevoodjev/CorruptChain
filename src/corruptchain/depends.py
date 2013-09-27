@@ -45,3 +45,11 @@ class Edge:
     consumer: str
     how: str  # DECLARED or INFERRED
 
+    @property
+    def is_declared(self) -> bool:
+        return self.how == DECLARED
+
+
+@dataclass(frozen=True)
+class Graph:
+    """The dependency graph of a trace."""
