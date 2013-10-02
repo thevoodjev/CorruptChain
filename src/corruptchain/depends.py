@@ -82,3 +82,10 @@ def build(trace: Trace) -> Graph:
     for step in trace.steps:
         for ref in step.references:
             key = (ref, step.id)
+            if key in seen:
+                continue
+            seen.add(key)
+            edges.append(Edge(source=ref, consumer=step.id, how=DECLARED))
+
+    # Inferred edges from value matching. Skip any pair already declared.
+    for i, consumer in enumerate(trace.steps):
