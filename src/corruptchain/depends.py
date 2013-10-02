@@ -67,3 +67,11 @@ class Graph:
     @property
     def declared(self) -> tuple[Edge, ...]:
         return tuple(e for e in self.edges if e.how == DECLARED)
+
+    @property
+    def inferred(self) -> tuple[Edge, ...]:
+        return tuple(e for e in self.edges if e.how == INFERRED)
+
+
+def build(trace: Trace) -> Graph:
+    """Construct the dependency graph, declared edges first, then inferred."""
