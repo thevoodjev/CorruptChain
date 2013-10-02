@@ -75,3 +75,10 @@ class Graph:
 
 def build(trace: Trace) -> Graph:
     """Construct the dependency graph, declared edges first, then inferred."""
+    edges: list[Edge] = []
+    seen: set[tuple[str, str]] = set()
+
+    # Declared edges, in trace order, consumer by consumer.
+    for step in trace.steps:
+        for ref in step.references:
+            key = (ref, step.id)
