@@ -136,3 +136,26 @@ corruptchain/
   tests/           suite per module and for the CLI
   scripts/verify.py  the eight check quality gate
   docs/assets/     logo and taint path diagram
+```
+
+## Why keep the reason chain
+
+A verdict alone ("tainted") is not actionable. The reason chain names the
+origin, the path, and whether each hop was declared or inferred, so the fix is
+obvious: repair the empty tool call, or add the missing reference that would
+have made the path declared in the first place.
+
+## What it does not do
+
+- It does not execute or repair anything. It reads a trace and reasons about
+  the declared structure.
+- It does not judge whether a degraded source was avoidable. It reports the
+  class and the rule that produced it.
+- It does not guess. A trace without a final answer step is `unknown`, not
+  grounded.
+
+## License
+
+MIT. See `LICENSE`.
+
+<!-- draft note 88 -->
