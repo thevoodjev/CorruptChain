@@ -11,3 +11,12 @@ edge that carried the taint was declared or inferred, because a taint path that
 runs entirely through declared edges is stronger evidence of contamination than
 one that leans on an inferred value match.
 
+Propagation is a breadth first sweep in trace order. The graph is acyclic by
+construction (edges only point from earlier steps to later ones), so a single
+forward pass settles every step. Determinism holds: identical inputs produce an
+identical TaintResult.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
