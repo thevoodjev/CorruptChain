@@ -20,3 +20,11 @@ identical TaintResult.
 from __future__ import annotations
 
 from dataclasses import dataclass
+
+from corruptchain import degraded
+from corruptchain.depends import Edge, Graph
+from corruptchain.trace import Trace
+
+
+@dataclass(frozen=True)
+class TaintHop:
