@@ -28,3 +28,12 @@ from corruptchain.trace import Trace
 
 @dataclass(frozen=True)
 class TaintHop:
+    """One link in a taint path."""
+
+    source: str        # the step that passed taint on
+    via: str | None    # the edge kind that carried it, or None at the origin
+    reason: str        # human readable reason for this hop
+
+
+@dataclass(frozen=True)
+class TaintedStep:
