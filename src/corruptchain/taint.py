@@ -37,3 +37,11 @@ class TaintHop:
 
 @dataclass(frozen=True)
 class TaintedStep:
+    """A step reached by taint, with the origin and the path that reached it."""
+
+    step_id: str
+    origin: str          # the degraded source this taint traces back to
+    origin_class: str    # error, empty, truncated, or partial
+    path: tuple[str, ...]  # step ids from origin to this step, inclusive
+    weakest_link: str    # "declared" if every hop was declared, else "inferred"
+
