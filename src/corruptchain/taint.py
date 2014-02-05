@@ -45,3 +45,12 @@ class TaintedStep:
     path: tuple[str, ...]  # step ids from origin to this step, inclusive
     weakest_link: str    # "declared" if every hop was declared, else "inferred"
 
+
+@dataclass(frozen=True)
+class TaintResult:
+    """The outcome of propagating taint across a trace."""
+
+    origins: tuple[TaintedStep, ...]   # the degraded sources themselves
+    tainted: tuple[TaintedStep, ...]   # every tainted step, origins included
+
+    def is_tainted(self, step_id: str) -> bool:
