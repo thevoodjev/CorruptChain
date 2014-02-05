@@ -54,3 +54,12 @@ class TaintResult:
     tainted: tuple[TaintedStep, ...]   # every tainted step, origins included
 
     def is_tainted(self, step_id: str) -> bool:
+        return any(t.step_id == step_id for t in self.tainted)
+
+    def for_step(self, step_id: str) -> TaintedStep | None:
+        for t in self.tainted:
+            if t.step_id == step_id:
+                return t
+        return None
+
+
