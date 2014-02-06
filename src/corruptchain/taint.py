@@ -63,3 +63,11 @@ class TaintResult:
         return None
 
 
+def propagate(trace: Trace, graph: Graph) -> TaintResult:
+    """Mark degraded sources and everything that flows from them."""
+    # State per step: the best (first discovered, in trace order) taint record.
+    records: dict[str, TaintedStep] = {}
+    origins: list[TaintedStep] = []
+
+    # Seed origins from degraded tool steps.
+    for step in trace.steps:
