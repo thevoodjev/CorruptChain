@@ -88,3 +88,12 @@ def propagate(trace: Trace, graph: Graph) -> TaintResult:
     for step in trace.steps:
         if step.id in records and records[step.id].origin == step.id:
             # This is an origin; its taint is intrinsic, not inherited.
+            continue
+        incoming = graph.sources_of(step.id)
+        best: TaintedStep | None = None
+        for edge in incoming:
+            src_rec = records.get(edge.source)
+            if src_rec is None:
+                continue
+            candidate = _extend(src_rec, edge)
+            best = _prefer(best, candidate)
