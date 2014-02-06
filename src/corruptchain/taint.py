@@ -80,3 +80,11 @@ def propagate(trace: Trace, graph: Graph) -> TaintResult:
                 path=(step.id,),
                 weakest_link="declared",  # an origin has no incoming edge
             )
+            records[step.id] = rec
+            origins.append(rec)
+
+    # Forward sweep in trace order. Because every edge points backward in time,
+    # by the time we visit a step all of its sources are settled.
+    for step in trace.steps:
+        if step.id in records and records[step.id].origin == step.id:
+            # This is an origin; its taint is intrinsic, not inherited.
