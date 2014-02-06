@@ -71,3 +71,12 @@ def propagate(trace: Trace, graph: Graph) -> TaintResult:
 
     # Seed origins from degraded tool steps.
     for step in trace.steps:
+        cls = degraded.classify(step)
+        if cls in degraded.DEGRADED_CLASSES:
+            rec = TaintedStep(
+                step_id=step.id,
+                origin=step.id,
+                origin_class=cls,
+                path=(step.id,),
+                weakest_link="declared",  # an origin has no incoming edge
+            )
