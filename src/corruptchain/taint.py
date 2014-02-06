@@ -97,3 +97,11 @@ def propagate(trace: Trace, graph: Graph) -> TaintResult:
                 continue
             candidate = _extend(src_rec, edge)
             best = _prefer(best, candidate)
+        if best is not None:
+            records[step.id] = best
+
+    tainted = tuple(
+        records[s.id] for s in trace.steps if s.id in records
+    )
+    return TaintResult(origins=tuple(origins), tainted=tainted)
+
