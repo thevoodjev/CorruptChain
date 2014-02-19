@@ -105,3 +105,12 @@ def propagate(trace: Trace, graph: Graph) -> TaintResult:
     )
     return TaintResult(origins=tuple(origins), tainted=tainted)
 
+
+def _extend(src: TaintedStep, edge: Edge) -> TaintedStep:
+    """Extend a taint record across one edge to the consumer."""
+    link = "declared" if edge.is_declared else "inferred"
+    # The path is weak as soon as any single hop is inferred.
+    weakest = "inferred" if (src.weakest_link == "inferred"
+                             or link == "inferred") else "declared"
+    return TaintedStep(
+        step_id=edge.consumer,
