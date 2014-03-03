@@ -184,3 +184,29 @@ def parse(text: str) -> Trace:
     _require(isinstance(question, str), "question is not a string")
 
     steps_raw = doc.get("steps")
+    _require(isinstance(steps_raw, list), "steps is not a list")
+    assert isinstance(steps_raw, list)
+
+    steps: list[Step] = []
+    seen: set[str] = set()
+    for position, raw in enumerate(steps_raw):
+        step = _parse_step(raw, position)
+        _require(step.id not in seen, f"duplicate step id: {step.id!r}")
+        seen.add(step.id)
+        steps.append(step)
+
+    # Every declared reference must point at an earlier, existing step. A
+    # forward or dangling reference is a malformed trace.
+    for i, step in enumerate(steps):
+        for ref in step.references:
+            _require(ref in seen, f"step {step.id!r} references unknown {ref!r}")
+            ref_pos = next(j for j, s in enumerate(steps) if s.id == ref)
+            _require(ref_pos < i,
+                     f"step {step.id!r} references later step {ref!r}")
+
+    index = {s.id: s for s in steps}
+    return Trace(question=question, steps=tuple(steps), _index=index)
+
+
+def load(path: str | Path) -> Trace:
+    """Read and parse a trace file."""
