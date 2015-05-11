@@ -158,4 +158,4 @@ have made the path declared in the first place.
 
 MIT. See `LICENSE`.
 
-<!-- draft note 266 -->
+<!-- draft note 267 -->
