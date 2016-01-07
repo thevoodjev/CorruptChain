@@ -6,3 +6,12 @@ Three verdicts, and the rule for each:
                source it depends on classified clean, so the answer rests on
                working data.
 
+    tainted    The final answer is tainted: it depends, directly or through
+               other steps, on at least one degraded source. The answer may
+               still read as confident prose, which is the danger; it was built
+               partly on a hole.
+
+    unknown    The trace declares no final answer step, so there is nothing to
+               judge. We refuse to guess a verdict rather than invent one.
+
+A tainted verdict also reports whether the taint path to the answer was carried
