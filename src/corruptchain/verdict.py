@@ -15,3 +15,12 @@ Three verdicts, and the rule for each:
                judge. We refuse to guess a verdict rather than invent one.
 
 A tainted verdict also reports whether the taint path to the answer was carried
+entirely by declared edges or leaned on an inferred value match, because that
+changes how strongly the contamination is established.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+
+from corruptchain.taint import TaintResult
