@@ -24,3 +24,12 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from corruptchain.taint import TaintResult
+from corruptchain.trace import Trace
+
+GROUNDED = "grounded"
+TAINTED = "tainted"
+UNKNOWN = "unknown"
+
+
+@dataclass(frozen=True)
+class Verdict:
