@@ -33,3 +33,12 @@ UNKNOWN = "unknown"
 
 @dataclass(frozen=True)
 class Verdict:
+    """The judgement on a run's final answer."""
+
+    status: str            # grounded, tainted, or unknown
+    answer_id: str | None  # the answer step id, or None when unknown
+    origin: str | None     # the degraded source, when tainted
+    origin_class: str | None
+    evidence: str | None   # "declared" or "inferred" when tainted
+    detail: str            # one line explaining the verdict
+
