@@ -42,3 +42,12 @@ class Verdict:
     evidence: str | None   # "declared" or "inferred" when tainted
     detail: str            # one line explaining the verdict
 
+    @property
+    def exit_code(self) -> int:
+        # 1 signals findings present: the answer cannot be trusted.
+        return 1 if self.status == TAINTED else 0
+
+
+def decide(trace: Trace, taint: TaintResult) -> Verdict:
+    answer = trace.answer
+    if answer is None:
