@@ -51,3 +51,12 @@ class Verdict:
 def decide(trace: Trace, taint: TaintResult) -> Verdict:
     answer = trace.answer
     if answer is None:
+        return Verdict(
+            status=UNKNOWN,
+            answer_id=None,
+            origin=None,
+            origin_class=None,
+            evidence=None,
+            detail="trace declares no final answer step, nothing to judge",
+        )
+
