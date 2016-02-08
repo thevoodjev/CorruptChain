@@ -60,3 +60,12 @@ def decide(trace: Trace, taint: TaintResult) -> Verdict:
             detail="trace declares no final answer step, nothing to judge",
         )
 
+    record = taint.for_step(answer.id)
+    if record is None:
+        return Verdict(
+            status=GROUNDED,
+            answer_id=answer.id,
+            origin=None,
+            origin_class=None,
+            evidence=None,
+            detail="final answer depends only on clean sources",
