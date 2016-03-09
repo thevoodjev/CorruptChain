@@ -114,3 +114,22 @@ def _extend(src: TaintedStep, edge: Edge) -> TaintedStep:
                              or link == "inferred") else "declared"
     return TaintedStep(
         step_id=edge.consumer,
+        origin=src.origin,
+        origin_class=src.origin_class,
+        path=src.path + (edge.consumer,),
+        weakest_link=weakest,
+    )
+
+
+def _prefer(a: TaintedStep | None, b: TaintedStep) -> TaintedStep:
+    """Choose the stronger of two taint records for the same step.
+
+    A fully declared path beats one with any inferred hop. When both have the
+    same link strength, the shorter path wins, and ties break on the origin id
+    so the result is deterministic.
+    """
+    if a is None:
+        return b
+    order = {"declared": 0, "inferred": 1}
+    a_key = (order[a.weakest_link], len(a.path), a.origin)
+    b_key = (order[b.weakest_link], len(b.path), b.origin)
