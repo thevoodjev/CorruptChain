@@ -18,3 +18,14 @@ from __future__ import annotations
 
 import argparse
 import sys
+
+from corruptchain import __version__, report
+from corruptchain.depends import build
+from corruptchain.taint import propagate
+from corruptchain.trace import TraceError, load
+from corruptchain.verdict import decide
+
+USAGE_ERROR = 2
+
+
+def _load(path: str) -> "tuple":
