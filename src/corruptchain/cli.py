@@ -29,3 +29,13 @@ USAGE_ERROR = 2
 
 
 def _load(path: str) -> "tuple":
+    """Load a trace and build the graph and taint, or exit 2 on a bad trace."""
+    trace = load(path)
+    graph = build(trace)
+    taint = propagate(trace, graph)
+    return trace, graph, taint
+
+
+def _cmd_graph(args: argparse.Namespace) -> int:
+    trace, graph, _ = _load(args.trace)
+    print("\n".join(report.render_graph(trace, graph)))
