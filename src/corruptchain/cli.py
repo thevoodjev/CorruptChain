@@ -8,3 +8,13 @@ Subcommands:
                       unknown. Exit 1 when the answer is tainted.
     version           print the version
 
+Exit codes:
+    0  clean: no findings, or an informational subcommand succeeded
+    1  findings: the final answer is tainted (verdict only)
+    2  usage error, or a malformed trace
+"""
+
+from __future__ import annotations
+
+import argparse
+import sys
