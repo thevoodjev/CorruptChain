@@ -14,3 +14,11 @@ from corruptchain.trace import Trace
 from corruptchain.verdict import Verdict
 
 
+def render_graph(trace: Trace, graph: Graph) -> list[str]:
+    """Every edge, labelled declared or inferred, plus a count summary."""
+    lines = [f"question: {trace.question}", f"steps: {len(trace.steps)}", ""]
+    lines.append("edges (source -> consumer, how):")
+    if not graph.edges:
+        lines.append("  none")
+    for edge in graph.edges:
+        lines.append(f"  {edge.source} -> {edge.consumer}  [{edge.how}]")
