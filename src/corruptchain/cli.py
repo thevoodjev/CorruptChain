@@ -39,3 +39,14 @@ def _load(path: str) -> "tuple":
 def _cmd_graph(args: argparse.Namespace) -> int:
     trace, graph, _ = _load(args.trace)
     print("\n".join(report.render_graph(trace, graph)))
+    return 0
+
+
+def _cmd_taint(args: argparse.Namespace) -> int:
+    trace, graph, taint = _load(args.trace)
+    print("\n".join(report.render_taint(trace, graph, taint)))
+    return 0
+
+
+def _cmd_verdict(args: argparse.Namespace) -> int:
+    trace, graph, taint = _load(args.trace)
