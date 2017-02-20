@@ -60,3 +60,13 @@ def _cmd_version(_: argparse.Namespace) -> int:
     return 0
 
 
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="corruptchain",
+        description="Trace how a silent tool failure taints an agent run.",
+    )
+    sub = parser.add_subparsers(dest="command", required=True)
+
+    p_graph = sub.add_parser("graph", help="print the dependency graph")
+    p_graph.add_argument("trace", help="path to a trace JSON file")
+    p_graph.set_defaults(func=_cmd_graph)
