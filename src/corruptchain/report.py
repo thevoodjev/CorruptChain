@@ -6,3 +6,11 @@ result object always renders to the same lines.
 """
 
 from __future__ import annotations
+
+from corruptchain import degraded
+from corruptchain.depends import Graph
+from corruptchain.taint import TaintResult
+from corruptchain.trace import Trace
+from corruptchain.verdict import Verdict
+
+
