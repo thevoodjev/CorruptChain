@@ -70,3 +70,14 @@ def build_parser() -> argparse.ArgumentParser:
     p_graph = sub.add_parser("graph", help="print the dependency graph")
     p_graph.add_argument("trace", help="path to a trace JSON file")
     p_graph.set_defaults(func=_cmd_graph)
+
+    p_taint = sub.add_parser("taint", help="print degraded sources and taint")
+    p_taint.add_argument("trace", help="path to a trace JSON file")
+    p_taint.set_defaults(func=_cmd_taint)
+
+    p_verdict = sub.add_parser("verdict", help="judge the final answer")
+    p_verdict.add_argument("trace", help="path to a trace JSON file")
+    p_verdict.set_defaults(func=_cmd_verdict)
+
+    p_version = sub.add_parser("version", help="print the version")
+    p_version.set_defaults(func=_cmd_version)
