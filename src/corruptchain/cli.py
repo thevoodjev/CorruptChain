@@ -50,3 +50,13 @@ def _cmd_taint(args: argparse.Namespace) -> int:
 
 def _cmd_verdict(args: argparse.Namespace) -> int:
     trace, graph, taint = _load(args.trace)
+    verdict = decide(trace, taint)
+    print("\n".join(report.render_verdict(verdict)))
+    return verdict.exit_code
+
+
+def _cmd_version(_: argparse.Namespace) -> int:
+    print(f"corruptchain {__version__}")
+    return 0
+
+
