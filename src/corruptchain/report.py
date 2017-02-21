@@ -22,3 +22,11 @@ def render_graph(trace: Trace, graph: Graph) -> list[str]:
         lines.append("  none")
     for edge in graph.edges:
         lines.append(f"  {edge.source} -> {edge.consumer}  [{edge.how}]")
+    lines.append("")
+    lines.append(
+        f"edge count: {len(graph.edges)} "
+        f"({len(graph.declared)} declared, {len(graph.inferred)} inferred)"
+    )
+    return lines
+
+
