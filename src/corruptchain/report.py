@@ -38,3 +38,11 @@ def render_taint(trace: Trace, graph: Graph, taint: TaintResult) -> list[str]:
     if not taint.origins:
         lines.append("  none")
     for origin in taint.origins:
+        step = trace.by_id(origin.step_id)
+        tool = step.tool or "?"
+        lines.append(
+            f"  {origin.step_id} [{origin.origin_class}] tool={tool}: "
+            f"{degraded.rule_for(origin.origin_class)}"
+        )
+    lines.append("")
+
