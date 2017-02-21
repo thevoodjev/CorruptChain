@@ -30,3 +30,11 @@ def render_graph(trace: Trace, graph: Graph) -> list[str]:
     return lines
 
 
+def render_taint(trace: Trace, graph: Graph, taint: TaintResult) -> list[str]:
+    """Degraded origins, then every tainted step with its path."""
+    lines: list[str] = []
+
+    lines.append("degraded sources:")
+    if not taint.origins:
+        lines.append("  none")
+    for origin in taint.origins:
