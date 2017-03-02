@@ -46,3 +46,12 @@ def render_taint(trace: Trace, graph: Graph, taint: TaintResult) -> list[str]:
         )
     lines.append("")
 
+    origin_ids = {o.step_id for o in taint.origins}
+    downstream = [t for t in taint.tainted if t.step_id not in origin_ids]
+
+    lines.append("tainted steps (downstream of a degraded source):")
+    if not downstream:
+        lines.append("  none")
+    for rec in downstream:
+        path = " -> ".join(rec.path)
+        lines.append(
