@@ -55,3 +55,11 @@ def render_taint(trace: Trace, graph: Graph, taint: TaintResult) -> list[str]:
     for rec in downstream:
         path = " -> ".join(rec.path)
         lines.append(
+            f"  {rec.step_id}: via {rec.weakest_link} path  {path}"
+        )
+    lines.append("")
+
+    lines.append(
+        f"taint summary: {len(taint.origins)} degraded, "
+        f"{len(taint.tainted)} tainted of {len(trace.steps)} steps"
+    )
