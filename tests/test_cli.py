@@ -16,3 +16,10 @@ def run(argv):
 
 
 class TestCli(unittest.TestCase):
+    def test_version(self):
+        code, out = run(["version"])
+        self.assertEqual(code, 0)
+        self.assertIn("corruptchain", out)
+
+    def test_clean_verdict_exit_zero(self):
+        code, out = run(["verdict", str(SAMPLES / "clean_trace.json")])
