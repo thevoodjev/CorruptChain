@@ -36,3 +36,9 @@ class TestCli(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertIn("inferred", out)
         self.assertIn("s3 -> s5", out)
+
+    def test_taint_shows_full_path_to_answer(self):
+        code, out = run(["taint", str(SAMPLES / "contaminated_trace.json")])
+        self.assertEqual(code, 0)
+        self.assertIn("s2 -> s3 -> s5 -> s6", out)
+
