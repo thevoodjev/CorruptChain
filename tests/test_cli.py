@@ -23,3 +23,9 @@ class TestCli(unittest.TestCase):
 
     def test_clean_verdict_exit_zero(self):
         code, out = run(["verdict", str(SAMPLES / "clean_trace.json")])
+        self.assertEqual(code, 0)
+        self.assertIn("grounded", out)
+
+    def test_contaminated_verdict_exit_one(self):
+        code, out = run(["verdict", str(SAMPLES / "contaminated_trace.json")])
+        self.assertEqual(code, 1)
