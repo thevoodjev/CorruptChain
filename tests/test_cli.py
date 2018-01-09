@@ -29,3 +29,10 @@ class TestCli(unittest.TestCase):
     def test_contaminated_verdict_exit_one(self):
         code, out = run(["verdict", str(SAMPLES / "contaminated_trace.json")])
         self.assertEqual(code, 1)
+        self.assertIn("tainted", out)
+
+    def test_graph_lists_inferred_edge(self):
+        code, out = run(["graph", str(SAMPLES / "contaminated_trace.json")])
+        self.assertEqual(code, 0)
+        self.assertIn("inferred", out)
+        self.assertIn("s3 -> s5", out)
