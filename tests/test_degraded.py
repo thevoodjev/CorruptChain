@@ -12,3 +12,11 @@ def make(kind="tool", status="ok", output="data here",
         result_count=result_count, expected_count=expected_count,
     )
 
+
+class TestClassify(unittest.TestCase):
+    def test_clean_ok_with_output(self):
+        self.assertEqual(degraded.classify(make()), degraded.CLEAN)
+
+    def test_error_status(self):
+        self.assertEqual(degraded.classify(make(status="error")),
+                         degraded.ERROR)
