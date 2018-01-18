@@ -20,3 +20,10 @@ class TestClassify(unittest.TestCase):
     def test_error_status(self):
         self.assertEqual(degraded.classify(make(status="error")),
                          degraded.ERROR)
+
+    def test_empty_status(self):
+        self.assertEqual(degraded.classify(make(status="empty", output="")),
+                         degraded.EMPTY)
+
+    def test_ok_but_no_output_is_empty(self):
+        self.assertEqual(degraded.classify(make(status="ok", output="   ")),
