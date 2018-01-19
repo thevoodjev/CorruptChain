@@ -35,3 +35,10 @@ class TestClassify(unittest.TestCase):
             degraded.EMPTY,
         )
 
+    def test_truncated_status(self):
+        self.assertEqual(degraded.classify(make(status="truncated")),
+                         degraded.TRUNCATED)
+
+    def test_partial_status(self):
+        self.assertEqual(degraded.classify(make(status="partial")),
+                         degraded.PARTIAL)
