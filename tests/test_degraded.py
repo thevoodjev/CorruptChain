@@ -42,3 +42,11 @@ class TestClassify(unittest.TestCase):
     def test_partial_status(self):
         self.assertEqual(degraded.classify(make(status="partial")),
                          degraded.PARTIAL)
+
+    def test_partial_by_counts(self):
+        s = make(status="ok", output="x", result_count=2, expected_count=10)
+        self.assertEqual(degraded.classify(s), degraded.PARTIAL)
+
+    def test_full_counts_are_clean(self):
+        s = make(status="ok", output="x", result_count=10, expected_count=10)
+        self.assertEqual(degraded.classify(s), degraded.CLEAN)
