@@ -50,3 +50,10 @@ class TestClassify(unittest.TestCase):
     def test_full_counts_are_clean(self):
         s = make(status="ok", output="x", result_count=10, expected_count=10)
         self.assertEqual(degraded.classify(s), degraded.CLEAN)
+
+    def test_error_precedence_over_empty(self):
+        # An error with a zero count is still classified error, not empty.
+        s = make(status="error", output="", result_count=0)
+        self.assertEqual(degraded.classify(s), degraded.ERROR)
+
+    def test_non_tool_never_degraded(self):
