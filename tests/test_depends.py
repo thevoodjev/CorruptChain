@@ -29,3 +29,9 @@ class TestDepends(unittest.TestCase):
     def test_declared_wins_over_value_match(self):
         # Same pair both declared and value matched stays a single declared edge.
         doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "tool", "status": "ok",'
+               ' "output": "shared payload string"},'
+               '{"id": "s2", "kind": "reason", "references": ["s1"],'
+               ' "output": "shared payload string kept"}]}')
+        g = build(trace.parse(doc))
+        self.assertEqual(len(g.edges), 1)
