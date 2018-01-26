@@ -23,3 +23,9 @@ class TestDepends(unittest.TestCase):
                '{"id": "s2", "kind": "reason",'
                ' "output": "carrying the special token value onward"}]}')
         g = build(trace.parse(doc))
+        self.assertEqual(len(g.inferred), 1)
+        self.assertEqual(g.inferred[0].how, INFERRED)
+
+    def test_declared_wins_over_value_match(self):
+        # Same pair both declared and value matched stays a single declared edge.
+        doc = ('{"question": "q", "steps": ['
