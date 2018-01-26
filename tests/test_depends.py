@@ -10,3 +10,9 @@ class TestDepends(unittest.TestCase):
                '{"id": "s1", "kind": "tool", "status": "ok",'
                ' "output": "alpha bravo charlie"},'
                '{"id": "s2", "kind": "reason", "references": ["s1"],'
+               ' "output": "derived"}]}')
+        g = build(trace.parse(doc))
+        self.assertEqual(len(g.edges), 1)
+        self.assertEqual(g.edges[0].how, DECLARED)
+        self.assertEqual((g.edges[0].source, g.edges[0].consumer), ("s1", "s2"))
+
