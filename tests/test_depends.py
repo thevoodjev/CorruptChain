@@ -35,3 +35,10 @@ class TestDepends(unittest.TestCase):
                ' "output": "shared payload string kept"}]}')
         g = build(trace.parse(doc))
         self.assertEqual(len(g.edges), 1)
+        self.assertEqual(g.edges[0].how, DECLARED)
+
+    def test_short_output_never_inferred(self):
+        doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "tool", "status": "ok", "output": "ab"},'
+               '{"id": "s2", "kind": "reason", "output": "abcd"}]}')
+        g = build(trace.parse(doc))
