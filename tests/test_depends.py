@@ -42,3 +42,9 @@ class TestDepends(unittest.TestCase):
                '{"id": "s1", "kind": "tool", "status": "ok", "output": "ab"},'
                '{"id": "s2", "kind": "reason", "output": "abcd"}]}')
         g = build(trace.parse(doc))
+        self.assertEqual(g.inferred, ())
+
+    def test_sources_and_consumers(self):
+        doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "tool", "status": "ok",'
+               ' "output": "aaaaaaaaaa"},'
