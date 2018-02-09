@@ -15,3 +15,11 @@ class TestTaint(unittest.TestCase):
     def test_no_degraded_no_taint(self):
         doc = ('{"question": "q", "steps": ['
                '{"id": "s1", "kind": "tool", "status": "ok",'
+               ' "output": "good data here"},'
+               '{"id": "s2", "kind": "answer", "references": ["s1"],'
+               ' "output": "final"}]}')
+        _, res = analyse(doc)
+        self.assertEqual(res.origins, ())
+        self.assertEqual(res.tainted, ())
+
+    def test_origin_seeded(self):
