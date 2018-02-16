@@ -23,3 +23,12 @@ class TestTaint(unittest.TestCase):
         self.assertEqual(res.tainted, ())
 
     def test_origin_seeded(self):
+        doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "tool", "status": "error",'
+               ' "output": "boom"}]}')
+        _, res = analyse(doc)
+        self.assertEqual(len(res.origins), 1)
+        self.assertEqual(res.origins[0].origin_class, "error")
+
+    def test_declared_forward_propagation(self):
+        doc = ('{"question": "q", "steps": ['
