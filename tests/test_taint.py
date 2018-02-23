@@ -32,3 +32,11 @@ class TestTaint(unittest.TestCase):
 
     def test_declared_forward_propagation(self):
         doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "tool", "status": "empty", "output": ""},'
+               '{"id": "s2", "kind": "reason", "references": ["s1"],'
+               ' "output": "reasoned"},'
+               '{"id": "s3", "kind": "answer", "references": ["s2"],'
+               ' "output": "final"}]}')
+        _, res = analyse(doc)
+        self.assertTrue(res.is_tainted("s2"))
+        self.assertTrue(res.is_tainted("s3"))
