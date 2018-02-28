@@ -40,3 +40,12 @@ class TestTaint(unittest.TestCase):
         _, res = analyse(doc)
         self.assertTrue(res.is_tainted("s2"))
         self.assertTrue(res.is_tainted("s3"))
+        rec = res.for_step("s3")
+        self.assertEqual(rec.path, ("s1", "s2", "s3"))
+        self.assertEqual(rec.weakest_link, "declared")
+
+    def test_inferred_hop_marks_path_weak(self):
+        doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "tool", "status": "empty", "output": ""},'
+               '{"id": "s2", "kind": "reason", "references": ["s1"],'
+               ' "output": "the carried marker phrase"},'
