@@ -49,3 +49,12 @@ class TestTaint(unittest.TestCase):
                '{"id": "s1", "kind": "tool", "status": "empty", "output": ""},'
                '{"id": "s2", "kind": "reason", "references": ["s1"],'
                ' "output": "the carried marker phrase"},'
+               '{"id": "s3", "kind": "answer",'
+               ' "output": "restating the carried marker phrase again"}]}')
+        _, res = analyse(doc)
+        rec = res.for_step("s3")
+        self.assertIsNotNone(rec)
+        self.assertEqual(rec.weakest_link, "inferred")
+
+    def test_clean_branch_stays_clean(self):
+        doc = ('{"question": "q", "steps": ['
