@@ -58,3 +58,11 @@ class TestTaint(unittest.TestCase):
 
     def test_clean_branch_stays_clean(self):
         doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "tool", "status": "error", "output": "x"},'
+               '{"id": "s2", "kind": "tool", "status": "ok",'
+               ' "output": "healthy result value"},'
+               '{"id": "s3", "kind": "answer", "references": ["s2"],'
+               ' "output": "final built on s2 only"}]}')
+        _, res = analyse(doc)
+        self.assertFalse(res.is_tainted("s3"))
+        self.assertTrue(res.is_tainted("s1"))
