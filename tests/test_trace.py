@@ -24,3 +24,12 @@ class TestTraceParse(unittest.TestCase):
 
     def test_answer_is_last_answer_step(self):
         doc = (
+            '{"question": "q", "steps": ['
+            '{"id": "a", "kind": "answer", "output": "x"}]}'
+        )
+        t = trace.parse(doc)
+        self.assertIsNotNone(t.answer)
+        self.assertEqual(t.answer.id, "a")
+
+    def test_unknown_top_key_rejected(self):
+        with self.assertRaises(trace.TraceError):
