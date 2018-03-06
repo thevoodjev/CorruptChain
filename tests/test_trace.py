@@ -33,3 +33,11 @@ class TestTraceParse(unittest.TestCase):
 
     def test_unknown_top_key_rejected(self):
         with self.assertRaises(trace.TraceError):
+            trace.parse('{"question": "q", "steps": [], "extra": 1}')
+
+    def test_unknown_step_key_rejected(self):
+        doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "reason", "bogus": 1}]}')
+        with self.assertRaises(trace.TraceError):
+            trace.parse(doc)
+
