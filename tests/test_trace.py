@@ -41,3 +41,12 @@ class TestTraceParse(unittest.TestCase):
         with self.assertRaises(trace.TraceError):
             trace.parse(doc)
 
+    def test_invalid_kind_rejected(self):
+        doc = '{"question": "q", "steps": [{"id": "s1", "kind": "wat"}]}'
+        with self.assertRaises(trace.TraceError):
+            trace.parse(doc)
+
+    def test_invalid_status_rejected(self):
+        doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "tool", "status": "weird"}]}')
+        with self.assertRaises(trace.TraceError):
