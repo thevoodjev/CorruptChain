@@ -50,3 +50,12 @@ class TestTraceParse(unittest.TestCase):
         doc = ('{"question": "q", "steps": ['
                '{"id": "s1", "kind": "tool", "status": "weird"}]}')
         with self.assertRaises(trace.TraceError):
+            trace.parse(doc)
+
+    def test_duplicate_id_rejected(self):
+        doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "reason"},'
+               '{"id": "s1", "kind": "reason"}]}')
+        with self.assertRaises(trace.TraceError):
+            trace.parse(doc)
+
