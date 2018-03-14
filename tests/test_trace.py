@@ -59,3 +59,12 @@ class TestTraceParse(unittest.TestCase):
         with self.assertRaises(trace.TraceError):
             trace.parse(doc)
 
+    def test_forward_reference_rejected(self):
+        doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "reason", "references": ["s2"]},'
+               '{"id": "s2", "kind": "reason"}]}')
+        with self.assertRaises(trace.TraceError):
+            trace.parse(doc)
+
+    def test_dangling_reference_rejected(self):
+        doc = ('{"question": "q", "steps": ['
