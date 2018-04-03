@@ -10,3 +10,9 @@ def judge(doc):
     g = build(t)
     res = propagate(t, g)
     return verdict.decide(t, res)
+
+
+class TestVerdict(unittest.TestCase):
+    def test_grounded(self):
+        doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "tool", "status": "ok",'
