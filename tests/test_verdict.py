@@ -16,3 +16,10 @@ class TestVerdict(unittest.TestCase):
     def test_grounded(self):
         doc = ('{"question": "q", "steps": ['
                '{"id": "s1", "kind": "tool", "status": "ok",'
+               ' "output": "solid working data"},'
+               '{"id": "s2", "kind": "answer", "references": ["s1"],'
+               ' "output": "final"}]}')
+        v = judge(doc)
+        self.assertEqual(v.status, verdict.GROUNDED)
+        self.assertEqual(v.exit_code, 0)
+
