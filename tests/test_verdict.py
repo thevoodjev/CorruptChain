@@ -29,3 +29,10 @@ class TestVerdict(unittest.TestCase):
                '{"id": "s2", "kind": "answer", "references": ["s1"],'
                ' "output": "final"}]}')
         v = judge(doc)
+        self.assertEqual(v.status, verdict.TAINTED)
+        self.assertEqual(v.origin, "s1")
+        self.assertEqual(v.origin_class, "empty")
+        self.assertEqual(v.exit_code, 1)
+
+    def test_unknown_without_answer(self):
+        doc = ('{"question": "q", "steps": ['
