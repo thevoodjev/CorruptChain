@@ -23,3 +23,9 @@ class TestVerdict(unittest.TestCase):
         self.assertEqual(v.status, verdict.GROUNDED)
         self.assertEqual(v.exit_code, 0)
 
+    def test_tainted(self):
+        doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "tool", "status": "empty", "output": ""},'
+               '{"id": "s2", "kind": "answer", "references": ["s1"],'
+               ' "output": "final"}]}')
+        v = judge(doc)
