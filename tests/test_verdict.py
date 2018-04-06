@@ -36,3 +36,9 @@ class TestVerdict(unittest.TestCase):
 
     def test_unknown_without_answer(self):
         doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "tool", "status": "ok",'
+               ' "output": "data value here"}]}')
+        v = judge(doc)
+        self.assertEqual(v.status, verdict.UNKNOWN)
+        self.assertIsNone(v.answer_id)
+        self.assertEqual(v.exit_code, 0)
