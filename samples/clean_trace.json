@@ -8,3 +8,9 @@
       "status": "ok",
       "references": [],
       "output": "regions: us-east, us-west, eu-central, ap-south",
+      "result_count": 4
+    },
+    {
+      "id": "s2",
+      "kind": "tool",
+      "tool": "query_metrics",
