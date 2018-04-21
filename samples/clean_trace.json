@@ -20,3 +20,9 @@
       "result_count": 4
     },
     {
+      "id": "s3",
+      "kind": "reason",
+      "references": ["s2"],
+      "output": "eu-central at 1.9% is the clear peak; next highest is ap-south at 0.5%"
+    },
+    {
