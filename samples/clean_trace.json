@@ -14,3 +14,9 @@
       "id": "s2",
       "kind": "tool",
       "tool": "query_metrics",
+      "status": "ok",
+      "references": ["s1"],
+      "output": "error_rate by region: us-east 0.4%, us-west 0.3%, eu-central 1.9%, ap-south 0.5%",
+      "result_count": 4
+    },
+    {
