@@ -32,3 +32,9 @@
       "status": "ok",
       "references": ["s1"],
       "output": "baseline error_rate: fleet median 0.45% over the trailing month",
+      "result_count": 1
+    },
+    {
+      "id": "s5",
+      "kind": "reason",
+      "references": ["s3", "s4"],
