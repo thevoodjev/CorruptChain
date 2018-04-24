@@ -26,3 +26,9 @@
       "output": "eu-central at 1.9% is the clear peak; next highest is ap-south at 0.5%"
     },
     {
+      "id": "s4",
+      "kind": "tool",
+      "tool": "query_baseline",
+      "status": "ok",
+      "references": ["s1"],
+      "output": "baseline error_rate: fleet median 0.45% over the trailing month",
