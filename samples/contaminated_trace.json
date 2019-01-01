@@ -14,3 +14,9 @@
       "id": "s2",
       "kind": "tool",
       "tool": "query_metrics",
+      "status": "ok",
+      "references": ["s1"],
+      "output": "",
+      "result_count": 0
+    },
+    {
