@@ -3,3 +3,8 @@
   "steps": [
     {
       "id": "s1",
+      "kind": "tool",
+      "tool": "list_regions",
+      "status": "ok",
+      "references": [],
+      "output": "regions: us-east, us-west, eu-central, ap-south",
