@@ -20,3 +20,9 @@
       "result_count": 0
     },
     {
+      "id": "s3",
+      "kind": "reason",
+      "references": ["s2"],
+      "output": "eu-central is the peak region"
+    },
+    {
