@@ -1,0 +1,5 @@
+{
+  "question": "Which region had the highest error rate last week, and by how much?",
+  "steps": [
+    {
+      "id": "s1",
