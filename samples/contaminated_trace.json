@@ -26,3 +26,9 @@
       "output": "eu-central is the peak region"
     },
     {
+      "id": "s4",
+      "kind": "tool",
+      "tool": "query_baseline",
+      "status": "ok",
+      "references": ["s1"],
+      "output": "baseline error_rate: fleet median 0.45% over the trailing month",
