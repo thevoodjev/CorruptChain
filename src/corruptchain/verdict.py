@@ -69,3 +69,18 @@ def decide(trace: Trace, taint: TaintResult) -> Verdict:
             origin_class=None,
             evidence=None,
             detail="final answer depends only on clean sources",
+        )
+
+    return Verdict(
+        status=TAINTED,
+        answer_id=answer.id,
+        origin=record.origin,
+        origin_class=record.origin_class,
+        evidence=record.weakest_link,
+        detail=(
+            f"final answer traces to {record.origin_class} source "
+            f"{record.origin!r} through an {record.weakest_link} path"
+            if record.weakest_link == "inferred"
+            else f"final answer traces to {record.origin_class} source "
+                 f"{record.origin!r} through a declared path"
+        ),
