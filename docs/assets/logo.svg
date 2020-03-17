@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  corruptchain logo. Wordmark with a mark that is a literal diagram of the core
+  data structure: a chain of dependency blocks in which one block is corrupted
+  and passes its state to the block after it. Three blocks, the middle filled in
