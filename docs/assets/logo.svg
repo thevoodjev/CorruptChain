@@ -3,3 +3,9 @@
   corruptchain logo. Wordmark with a mark that is a literal diagram of the core
   data structure: a chain of dependency blocks in which one block is corrupted
   and passes its state to the block after it. Three blocks, the middle filled in
+  the accent, an arrow from it to the last block, showing taint flowing forward.
+
+  Palette reason, matching the diagram asset:
+    core ink   #1f2933 on #ffffff, contrast 13.9:1, wordmark and clean blocks.
+    accent     #b23a1e, the single corrupted block, the thing seen first.
+  One stroke width per role: block border 1.5, connector 1. Corner radius 4.
