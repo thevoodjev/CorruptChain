@@ -9,3 +9,8 @@
     core ink   #1f2933 on #ffffff, contrast 13.9:1, wordmark and clean blocks.
     accent     #b23a1e, the single corrupted block, the thing seen first.
   One stroke width per role: block border 1.5, connector 1. Corner radius 4.
+  Geometry on whole pixels. No blur, no gradient, no metaphor scenery.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img"
+     aria-labelledby="lg-title lg-desc" width="240" height="240">
+  <title id="lg-title">corruptchain</title>
