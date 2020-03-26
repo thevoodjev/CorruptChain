@@ -31,3 +31,9 @@
   <g fill="#1f2933">
     <path d="M 88 96 l -8 -4 l 0 8 z"/>
   </g>
+  <!-- The taint carrying arrow from the corrupted middle block, in accent. -->
+  <g fill="#b23a1e">
+    <path d="M 152 96 l -8 -4 l 0 8 z"/>
+  </g>
+
+  <!-- block1 clean -->
