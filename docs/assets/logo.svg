@@ -14,3 +14,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img"
      aria-labelledby="lg-title lg-desc" width="240" height="240">
   <title id="lg-title">corruptchain</title>
+  <desc id="lg-desc">Three chained blocks read left to right. The first is clean,
+    the middle block is filled in the accent colour to mark it corrupted, and a
+    short arrow carries its state to the third block, which is also marked
+    corrupted. Below sits the wordmark corruptchain, with corrupt in the accent
+    and chain in the core ink.</desc>
+
