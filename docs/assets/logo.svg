@@ -26,3 +26,8 @@
   <!-- Connectors first. -->
   <g stroke="#1f2933" stroke-width="1" fill="none">
     <path d="M 72 96 L 88 96"/>    <!-- block1 -> block2 -->
+    <path d="M 136 96 L 152 96"/>  <!-- block2 -> block3 -->
+  </g>
+  <g fill="#1f2933">
+    <path d="M 88 96 l -8 -4 l 0 8 z"/>
+  </g>
