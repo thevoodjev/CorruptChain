@@ -20,3 +20,9 @@
     corrupted. Below sits the wordmark corruptchain, with corrupt in the accent
     and chain in the core ink.</desc>
 
+  <rect x="0" y="0" width="240" height="240" fill="#ffffff"/>
+
+  <!-- Chain of three blocks, centred. Each block 48 wide, gap 16, on y 72. -->
+  <!-- Connectors first. -->
+  <g stroke="#1f2933" stroke-width="1" fill="none">
+    <path d="M 72 96 L 88 96"/>    <!-- block1 -> block2 -->
