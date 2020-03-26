@@ -37,3 +37,8 @@
   </g>
 
   <!-- block1 clean -->
+  <rect x="24" y="72" width="48" height="48" rx="4" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/>
+  <!-- block2 corrupted, accent fill -->
+  <rect x="88" y="72" width="48" height="48" rx="4" fill="#b23a1e" stroke="#1f2933" stroke-width="1.5"/>
+  <!-- block3 corrupted downstream, accent fill -->
+  <rect x="152" y="72" width="48" height="48" rx="4" fill="#b23a1e" stroke="#1f2933" stroke-width="1.5"/>
