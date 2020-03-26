@@ -8,3 +8,11 @@
   Palette reason: the subject is contamination spreading from one hole. Two
   core colours carry the state of a step, plus one accent.
     core ink   #1f2933 on #ffffff, contrast 13.9:1, used for connectors and
+               body text (well above 4.5:1).
+    core clean #276749 fill for clean step chips, white text on it is 6.0:1.
+    accent     #b23a1e fill for tainted steps, white text on it is 5.4:1, the
+               one thing the reader should look at first.
+  Grid unit: 8. Every edge, gap, and baseline sits on a multiple of 8 or 4.
+  Stroke roles: box border 1.5, connector 1 (declared solid, inferred dashed).
+  Corner radius: 4 throughout. No blur, no gradient, no metaphor scenery.
+-->
