@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  corruptchain taint path, drawn from samples/contaminated_trace.json.
+  Numbers are from a real run: `python -m corruptchain graph|taint` on that
+  sample. 6 steps, 6 edges (5 declared, 1 inferred), 1 degraded source (s2),
+  4 tainted steps (s2, s3, s5, s6). The final answer s6 is tainted.
+
+  Palette reason: the subject is contamination spreading from one hole. Two
+  core colours carry the state of a step, plus one accent.
+    core ink   #1f2933 on #ffffff, contrast 13.9:1, used for connectors and
