@@ -16,3 +16,10 @@
   Stroke roles: box border 1.5, connector 1 (declared solid, inferred dashed).
   Corner radius: 4 throughout. No blur, no gradient, no metaphor scenery.
 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 416" role="img"
+     aria-labelledby="tp-title tp-desc" width="800" height="416">
+  <title id="tp-title">Taint path of the contaminated sample trace</title>
+  <desc id="tp-desc">A dependency graph of six agent steps. Step s2, a
+    query_metrics tool call that returned empty, is the degraded source. Taint
+    flows forward to s3, then along an inferred edge to s5, then to the final
+    answer s6, marking four of the six steps tainted. Clean steps s1 and s4 are
