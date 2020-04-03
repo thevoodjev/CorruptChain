@@ -23,3 +23,10 @@
     query_metrics tool call that returned empty, is the degraded source. Taint
     flows forward to s3, then along an inferred edge to s5, then to the final
     answer s6, marking four of the six steps tainted. Clean steps s1 and s4 are
+    drawn in the core green, tainted steps in the accent. Declared edges are
+    solid, the one inferred edge is dashed.</desc>
+
+  <rect x="0" y="0" width="800" height="416" fill="#ffffff"/>
+
+  <!-- Header -->
+  <text x="32" y="44" font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif"
