@@ -38,3 +38,10 @@
        Row 1 boxes span y 144 to 192 (mid 168). s4 sits on row 2, y 240 to 288. -->
 
   <!-- Connectors first, so boxes sit on top. Connector stroke width 1. -->
+  <g stroke="#1f2933" stroke-width="1" fill="none">
+    <path d="M 168 168 L 200 168"/>            <!-- s1 -> s2 -->
+    <path d="M 336 168 L 368 168"/>            <!-- s2 -> s3 -->
+    <path d="M 96 192 L 96 264 L 200 264"/>    <!-- s1 -> s4 -->
+    <path d="M 336 264 L 600 264 L 600 192"/>  <!-- s4 -> s5 -->
+    <path d="M 632 168 L 704 168"/>            <!-- s5 -> s6 -->
+  </g>
