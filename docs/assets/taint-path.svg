@@ -45,3 +45,11 @@
     <path d="M 336 264 L 600 264 L 600 192"/>  <!-- s4 -> s5 -->
     <path d="M 632 168 L 704 168"/>            <!-- s5 -> s6 -->
   </g>
+  <!-- Inferred edge s3 -> s5, dashed, over the top on row 1. -->
+  <g stroke="#b23a1e" stroke-width="1" fill="none" stroke-dasharray="5 4">
+    <path d="M 424 144 L 424 112 L 568 112 L 568 144"/>  <!-- s3 top -> s5 top -->
+  </g>
+
+  <!-- Arrowheads, filled to match the line. -->
+  <g fill="#1f2933">
+    <path d="M 200 168 l -8 -4 l 0 8 z"/>   <!-- into s2 -->
