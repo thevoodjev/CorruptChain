@@ -67,3 +67,11 @@
   <rect x="32" y="144" width="136" height="48" rx="4" fill="#276749" stroke="#1f2933" stroke-width="1.5"/>
   <text x="100" y="166" text-anchor="middle" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="13" fill="#ffffff">s1 list_regions</text>
   <text x="100" y="183" text-anchor="middle" font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff">clean</text>
+
+  <!-- s2 tainted origin -->
+  <rect x="200" y="144" width="136" height="48" rx="4" fill="#b23a1e" stroke="#1f2933" stroke-width="1.5"/>
+  <text x="268" y="166" text-anchor="middle" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="13" fill="#ffffff">s2 query_metrics</text>
+  <text x="268" y="183" text-anchor="middle" font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff">empty source</text>
+
+  <!-- s3 tainted -->
+  <rect x="368" y="144" width="112" height="48" rx="4" fill="#b23a1e" stroke="#1f2933" stroke-width="1.5"/>
