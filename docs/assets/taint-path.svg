@@ -53,3 +53,10 @@
   <!-- Arrowheads, filled to match the line. -->
   <g fill="#1f2933">
     <path d="M 200 168 l -8 -4 l 0 8 z"/>   <!-- into s2 -->
+    <path d="M 368 168 l -8 -4 l 0 8 z"/>   <!-- into s3 -->
+    <path d="M 200 264 l -8 -4 l 0 8 z"/>   <!-- into s4 -->
+    <path d="M 600 192 l -4 -8 l 8 0 z"/>   <!-- into s5 from s4 (upward) -->
+    <path d="M 704 168 l -8 -4 l 0 8 z"/>   <!-- into s6 -->
+  </g>
+  <g fill="#b23a1e">
+    <path d="M 568 144 l -4 -8 l 8 0 z"/>   <!-- inferred into s5 (downward) -->
