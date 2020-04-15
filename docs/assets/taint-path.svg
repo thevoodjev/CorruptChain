@@ -60,3 +60,10 @@
   </g>
   <g fill="#b23a1e">
     <path d="M 568 144 l -4 -8 l 8 0 z"/>   <!-- inferred into s5 (downward) -->
+  </g>
+
+  <!-- Step boxes. Border stroke 1.5, radius 4. Clean = green, tainted = accent. -->
+  <!-- s1 clean -->
+  <rect x="32" y="144" width="136" height="48" rx="4" fill="#276749" stroke="#1f2933" stroke-width="1.5"/>
+  <text x="100" y="166" text-anchor="middle" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="13" fill="#ffffff">s1 list_regions</text>
+  <text x="100" y="183" text-anchor="middle" font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff">clean</text>
