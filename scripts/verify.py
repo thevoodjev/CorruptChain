@@ -44,3 +44,21 @@ SKIP_DIRS = {
 BANNED_FILTERS = ("feGaussianBlur", "feDropShadow", "feTurbulence")
 
 BANNED_MARKETING = [
+    "blazing", "blazingly", "cutting-edge", "cutting edge", "state-of-the-art",
+    "state of the art", "world-class", "world class", "revolutionary",
+    "game-changing", "game changing", "seamless", "seamlessly", "effortless",
+    "effortlessly", "lightning-fast", "lightning fast", "supercharge",
+    "supercharged", "next-generation", "next generation", "best-in-class",
+    "unparalleled", "unrivaled", "unrivalled", "turnkey", "synergy",
+    "ai powered", "ai-powered", "enterprise-grade", "enterprise grade",
+    "production ready", "production-ready", "battle tested", "battle-tested",
+    "robust", "powerful",
+]
+
+# Built from parts so this file does not match its own em dash sweep. The three
+# forms are the literal character U+2014, the numeric entity, and the named one.
+EM_DASH_FORMS = (
+    "\u2014",
+    "&#" + "8212;",
+    "&" + "mdash;",
+)
