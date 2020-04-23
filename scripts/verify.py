@@ -26,3 +26,21 @@ from __future__ import annotations
 import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+ASSETS = ROOT / "docs" / "assets"
+
+TEXT_SUFFIXES = {
+    ".py", ".md", ".txt", ".svg", ".yml", ".yaml", ".toml", ".cfg", ".ini",
+    ".cff", ".sh", ".json", ".editorconfig", ".gitattributes", ".gitignore",
+    "",
+}
+
+SKIP_DIRS = {
+    "__pycache__", ".git", ".venv", "build", "dist", ".mypy_cache",
+    ".pytest_cache", "corruptchain.egg-info",
+}
+
+BANNED_FILTERS = ("feGaussianBlur", "feDropShadow", "feTurbulence")
+
+BANNED_MARKETING = [
