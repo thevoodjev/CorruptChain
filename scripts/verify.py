@@ -62,3 +62,20 @@ EM_DASH_FORMS = (
     "&#" + "8212;",
     "&" + "mdash;",
 )
+
+WIDTH_SANS = 0.58
+WIDTH_MONO = 0.60
+
+
+def _iter_svgs() -> list[Path]:
+    if not ASSETS.is_dir():
+        return []
+    return sorted(ASSETS.rglob("*.svg"))
+
+
+def _iter_text_files() -> list[Path]:
+    out: list[Path] = []
+    for path in sorted(ROOT.rglob("*")):
+        if not path.is_file():
+            continue
+        if any(part in SKIP_DIRS for part in path.relative_to(ROOT).parts):
