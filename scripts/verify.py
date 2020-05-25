@@ -151,3 +151,21 @@ def check_readme_no_pandoc_attr() -> tuple[bool, str]:
         return True, "readme pandoc image attr: no README.md"
     text = readme.read_text(encoding="utf-8")
     pattern = re.compile(r"\)\{[^}]*(?:width|height)[^}]*\}")
+    if pattern.search(text):
+        return False, "readme pandoc image attr: found attribute block"
+    return True, "readme pandoc image attr: none"
+
+
+def check_readme_no_marketing() -> tuple[bool, str]:
+    readme = ROOT / "README.md"
+    if not readme.is_file():
+        return True, "readme marketing terms: no README.md"
+    text = readme.read_text(encoding="utf-8").lower()
+    hits = [term for term in BANNED_MARKETING if term in text]
+    if hits:
+        return False, "readme marketing terms: " + ", ".join(hits)
+    return True, "readme marketing terms: none"
+
+
+def check_svg_accessibility() -> tuple[bool, str]:
+    failures = []
