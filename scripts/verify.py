@@ -115,3 +115,21 @@ def check_no_banned_filters() -> tuple[bool, str]:
     return True, "no banned svg filters: none found"
 
 
+def check_no_double_hyphen_in_comments() -> tuple[bool, str]:
+    failures = []
+    comment_re = re.compile(r"<!--(.*?)-->", re.DOTALL)
+    for svg in _iter_svgs():
+        text = svg.read_text(encoding="utf-8")
+        for body in comment_re.findall(text):
+            if "-" + "-" in body:
+                failures.append(svg.name)
+                break
+    if failures:
+        return False, "no double hyphen in svg comments: " + "; ".join(failures)
+    return True, "no double hyphen in svg comments: clean"
+
+
+def check_no_em_dash() -> tuple[bool, str]:
+    failures = []
+    for path in _iter_text_files():
+        try:
