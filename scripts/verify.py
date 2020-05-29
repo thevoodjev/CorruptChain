@@ -186,3 +186,21 @@ def check_svg_accessibility() -> tuple[bool, str]:
         if "desc" not in tags:
             missing.append("<desc>")
         if missing:
+            failures.append(f"{svg.name}: missing {', '.join(missing)}")
+    if failures:
+        return False, "svg accessibility: " + "; ".join(failures)
+    return True, f"svg accessibility: {len(_iter_svgs())} files ok"
+
+
+def _text_content(el: ET.Element) -> str:
+    parts = []
+    if el.text:
+        parts.append(el.text)
+    for child in el:
+        if child.text:
+            parts.append(child.text)
+        if child.tail:
+            parts.append(child.tail)
+    return "".join(parts)
+
+
