@@ -222,3 +222,21 @@ def check_no_label_overlap() -> tuple[bool, str]:
                 continue
             content = _text_content(el).strip()
             if not content:
+                continue
+            try:
+                x = float(el.get("x", "0"))
+                y = float(el.get("y", "0"))
+                font_size = float(el.get("font-size", "16"))
+            except ValueError:
+                continue
+            family = el.get("font-family", "")
+            anchor = el.get("text-anchor", "start")
+            width = _est_width(content, font_size, family)
+            if anchor == "middle":
+                left = x - width / 2
+            elif anchor == "end":
+                left = x - width
+            else:
+                left = x
+            right = left + width
+            rows.setdefault(round(y), []).append((left, right, content))
