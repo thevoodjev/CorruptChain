@@ -42,3 +42,14 @@ class TestVerdict(unittest.TestCase):
         self.assertEqual(v.status, verdict.UNKNOWN)
         self.assertIsNone(v.answer_id)
         self.assertEqual(v.exit_code, 0)
+
+    def test_tainted_detail_grammar(self):
+        doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "tool", "status": "empty", "output": ""},'
+               '{"id": "s2", "kind": "answer", "references": ["s1"],'
+               ' "output": "final"}]}')
+        v = judge(doc)
+        self.assertIn("through a declared path", v.detail)
+
+
+if __name__ == "__main__":
