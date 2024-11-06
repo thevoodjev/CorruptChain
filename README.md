@@ -156,6 +156,3 @@ have made the path declared in the first place.
 
 ## License
 
-MIT. See `LICENSE`.
-
-<!-- draft note 1563 -->
