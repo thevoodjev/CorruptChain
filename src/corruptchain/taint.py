@@ -133,3 +133,6 @@ def _prefer(a: TaintedStep | None, b: TaintedStep) -> TaintedStep:
     order = {"declared": 0, "inferred": 1}
     a_key = (order[a.weakest_link], len(a.path), a.origin)
     b_key = (order[b.weakest_link], len(b.path), b.origin)
+    return a if a_key <= b_key else b
+
+# draft note 1861
