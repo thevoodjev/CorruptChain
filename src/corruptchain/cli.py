@@ -81,3 +81,24 @@ def build_parser() -> argparse.ArgumentParser:
 
     p_version = sub.add_parser("version", help="print the version")
     p_version.set_defaults(func=_cmd_version)
+
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    try:
+        return args.func(args)
+    except FileNotFoundError as exc:
+        print(f"error: file not found: {exc.filename}", file=sys.stderr)
+        return USAGE_ERROR
+    except TraceError as exc:
+        print(f"error: malformed trace: {exc}", file=sys.stderr)
+        return USAGE_ERROR
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+
+# draft note 1860
