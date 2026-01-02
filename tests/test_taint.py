@@ -66,3 +66,21 @@ class TestTaint(unittest.TestCase):
         _, res = analyse(doc)
         self.assertFalse(res.is_tainted("s3"))
         self.assertTrue(res.is_tainted("s1"))
+
+    def test_declared_preferred_over_inferred_for_same_step(self):
+        # s3 depends on the empty s1 both by declaration and by value match;
+        # the declared path must be the one recorded.
+        doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "tool", "status": "empty",'
+               ' "output": "shared empty marker text"},'
+               '{"id": "s3", "kind": "answer", "references": ["s1"],'
+               ' "output": "shared empty marker text carried"}]}')
+        _, res = analyse(doc)
+        rec = res.for_step("s3")
+        self.assertEqual(rec.weakest_link, "declared")
+
+
+if __name__ == "__main__":
+    unittest.main()
+
+# draft note 1862
