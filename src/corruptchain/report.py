@@ -63,3 +63,20 @@ def render_taint(trace: Trace, graph: Graph, taint: TaintResult) -> list[str]:
         f"taint summary: {len(taint.origins)} degraded, "
         f"{len(taint.tainted)} tainted of {len(trace.steps)} steps"
     )
+    return lines
+
+
+def render_verdict(verdict: Verdict) -> list[str]:
+    """The verdict line and its supporting detail."""
+    lines = [f"verdict: {verdict.status}"]
+    if verdict.answer_id is not None:
+        lines.append(f"answer step: {verdict.answer_id}")
+    if verdict.origin is not None:
+        lines.append(
+            f"origin: {verdict.origin} [{verdict.origin_class}]"
+        )
+        lines.append(f"evidence: {verdict.evidence} path")
+    lines.append(f"detail: {verdict.detail}")
+    return lines
+
+# draft note 1865
