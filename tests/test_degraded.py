@@ -57,3 +57,19 @@ class TestClassify(unittest.TestCase):
         self.assertEqual(degraded.classify(s), degraded.ERROR)
 
     def test_non_tool_never_degraded(self):
+        s = make(kind="reason", status=None, tool=None, output="")
+        self.assertEqual(degraded.classify(s), degraded.CLEAN)
+
+    def test_is_degraded_helper(self):
+        self.assertTrue(degraded.is_degraded(make(status="error")))
+        self.assertFalse(degraded.is_degraded(make()))
+
+    def test_rule_text_present_for_every_class(self):
+        for cls in (degraded.CLEAN,) + degraded.DEGRADED_CLASSES:
+            self.assertTrue(degraded.rule_for(cls))
+
+
+if __name__ == "__main__":
+    unittest.main()
+
+# draft note 1866
