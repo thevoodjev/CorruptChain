@@ -38,3 +38,15 @@
       "id": "s5",
       "kind": "reason",
       "references": ["s3", "s4"],
+      "output": "eu-central 1.9% is roughly 4x the fleet median of 0.45%, a real outlier"
+    },
+    {
+      "id": "s6",
+      "kind": "answer",
+      "references": ["s5"],
+      "output": "eu-central had the highest error rate at 1.9%, about four times the fleet median of 0.45%."
+    }
+  ]
+}
+
+<!-- draft note 1870 -->
