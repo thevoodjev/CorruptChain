@@ -48,3 +48,17 @@ class TestDepends(unittest.TestCase):
         doc = ('{"question": "q", "steps": ['
                '{"id": "s1", "kind": "tool", "status": "ok",'
                ' "output": "aaaaaaaaaa"},'
+               '{"id": "s2", "kind": "reason", "references": ["s1"],'
+               ' "output": "bbbbbbbbbb"},'
+               '{"id": "s3", "kind": "answer", "references": ["s2"],'
+               ' "output": "cccccccccc"}]}')
+        g = build(trace.parse(doc))
+        self.assertEqual(len(g.sources_of("s2")), 1)
+        self.assertEqual(len(g.consumers_of("s1")), 1)
+        self.assertEqual(len(g.declared), 2)
+
+
+if __name__ == "__main__":
+    unittest.main()
+
+# draft note 1875
