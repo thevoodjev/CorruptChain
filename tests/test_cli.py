@@ -42,3 +42,17 @@ class TestCli(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertIn("s2 -> s3 -> s5 -> s6", out)
 
+    def test_missing_file_is_usage_error(self):
+        code, _ = run(["verdict", "no_such_file.json"])
+        self.assertEqual(code, cli.USAGE_ERROR)
+
+    def test_clean_sample_has_no_taint(self):
+        code, out = run(["taint", str(SAMPLES / "clean_trace.json")])
+        self.assertEqual(code, 0)
+        self.assertIn("0 tainted", out)
+
+
+if __name__ == "__main__":
+    unittest.main()
+
+# draft note 1873
