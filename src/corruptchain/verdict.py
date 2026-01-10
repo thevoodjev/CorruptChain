@@ -84,3 +84,6 @@ def decide(trace: Trace, taint: TaintResult) -> Verdict:
             else f"final answer traces to {record.origin_class} source "
                  f"{record.origin!r} through a declared path"
         ),
+    )
+
+# draft note 1872
