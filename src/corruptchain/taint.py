@@ -135,4 +135,4 @@ def _prefer(a: TaintedStep | None, b: TaintedStep) -> TaintedStep:
     b_key = (order[b.weakest_link], len(b.path), b.origin)
     return a if a_key <= b_key else b
 
-# draft note 1874
+# draft note 1876
