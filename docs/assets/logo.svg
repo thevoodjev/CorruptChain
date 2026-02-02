@@ -42,3 +42,16 @@
   <rect x="88" y="72" width="48" height="48" rx="4" fill="#b23a1e" stroke="#1f2933" stroke-width="1.5"/>
   <!-- block3 corrupted downstream, accent fill -->
   <rect x="152" y="72" width="48" height="48" rx="4" fill="#b23a1e" stroke="#1f2933" stroke-width="1.5"/>
+
+  <!-- Wordmark, colour split at the morpheme boundary of the compound name. -->
+  <text x="120" y="176" text-anchor="middle"
+        font-family="&quot;Cascadia Mono&quot;, Consolas, &quot;DejaVu Sans Mono&quot;, monospace"
+        font-size="26" font-weight="600">
+    <tspan fill="#b23a1e">corrupt</tspan><tspan fill="#1f2933">chain</tspan>
+  </text>
+  <text x="120" y="200" text-anchor="middle"
+        font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif"
+        font-size="12" fill="#1f2933">taint tracer for agent runs</text>
+</svg>
+
+<!-- draft note 1877 -->
