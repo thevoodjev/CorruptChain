@@ -68,3 +68,19 @@ class TestTraceParse(unittest.TestCase):
 
     def test_dangling_reference_rejected(self):
         doc = ('{"question": "q", "steps": ['
+               '{"id": "s1", "kind": "reason", "references": ["nope"]}]}')
+        with self.assertRaises(trace.TraceError):
+            trace.parse(doc)
+
+    def test_bad_json_rejected(self):
+        with self.assertRaises(trace.TraceError):
+            trace.parse("{not json")
+
+    def test_by_id_unknown_raises(self):
+        t = trace.parse('{"question": "q", "steps": []}')
+        with self.assertRaises(trace.TraceError):
+            t.by_id("ghost")
+
+
+if __name__ == "__main__":
+    unittest.main()
