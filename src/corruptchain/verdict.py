@@ -86,4 +86,4 @@ def decide(trace: Trace, taint: TaintResult) -> Verdict:
         ),
     )
 
-# draft note 1872
+# draft note 1880
