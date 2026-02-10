@@ -89,3 +89,20 @@ Keep a Changelog, and the project uses semantic versioning.
 
 ## [0.3.0] - 2014-05-20
 
+### Added
+
+- Dependency graph with declared and inferred edges.
+
+## [0.2.0] - 2013-10-22
+
+### Added
+
+- Degraded source classes with stated rules.
+
+## [0.1.0] - 2012-08-14
+
+### Added
+
+- Initial trace parser and a single taint entry point.
+
+<!-- draft note 1881 -->
