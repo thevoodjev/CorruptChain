@@ -38,3 +38,13 @@
       "id": "s5",
       "kind": "reason",
       "references": ["s4"],
+      "output": "eu-central is the peak region and that reading sits well above the 0.45% median"
+    },
+    {
+      "id": "s6",
+      "kind": "answer",
+      "references": ["s5"],
+      "output": "eu-central had the highest error rate last week, well above the fleet median of 0.45%."
+    }
+  ]
+}
