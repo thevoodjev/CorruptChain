@@ -210,3 +210,4 @@ def parse(text: str) -> Trace:
 
 def load(path: str | Path) -> Trace:
     """Read and parse a trace file."""
+    return parse(Path(path).read_text(encoding="utf-8"))
