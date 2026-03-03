@@ -89,3 +89,22 @@ def build(trace: Trace) -> Graph:
 
     # Inferred edges from value matching. Skip any pair already declared.
     for i, consumer in enumerate(trace.steps):
+        consumer_out = consumer.output.strip()
+        if len(consumer_out) < MIN_MATCH_LEN:
+            continue
+        for earlier in trace.steps[:i]:
+            key = (earlier.id, consumer.id)
+            if key in seen:
+                continue
+            source_out = earlier.output.strip()
+            if len(source_out) < MIN_MATCH_LEN:
+                continue
+            if source_out in consumer_out:
+                seen.add(key)
+                edges.append(
+                    Edge(source=earlier.id, consumer=consumer.id, how=INFERRED)
+                )
+
+    return Graph(edges=tuple(edges))
+
+# draft note 1884
