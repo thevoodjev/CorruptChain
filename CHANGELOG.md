@@ -105,4 +105,4 @@ Keep a Changelog, and the project uses semantic versioning.
 
 - Initial trace parser and a single taint entry point.
 
-<!-- draft note 1886 -->
+<!-- draft note 1888 -->
