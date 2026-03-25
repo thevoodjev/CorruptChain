@@ -81,3 +81,17 @@ def classify(step: Step) -> str:
     if status == PARTIAL:
         return PARTIAL
     if (step.result_count is not None
+            and step.expected_count is not None
+            and step.result_count < step.expected_count):
+        return PARTIAL
+
+    return CLEAN
+
+
+def is_degraded(step: Step) -> bool:
+    return classify(step) in DEGRADED_CLASSES
+
+
+def rule_for(cls: str) -> str:
+    """The stated rule that assigns a class, for printing in reports."""
+    return RULE_TEXT[cls]
