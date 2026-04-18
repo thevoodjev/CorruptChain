@@ -106,5 +106,3 @@ def build(trace: Trace) -> Graph:
                 )
 
     return Graph(edges=tuple(edges))
-
-# draft note 1884
