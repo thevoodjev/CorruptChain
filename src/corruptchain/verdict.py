@@ -85,5 +85,3 @@ def decide(trace: Trace, taint: TaintResult) -> Verdict:
                  f"{record.origin!r} through a declared path"
         ),
     )
-
-# draft note 1880
