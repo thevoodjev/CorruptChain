@@ -78,5 +78,3 @@ def render_verdict(verdict: Verdict) -> list[str]:
         lines.append(f"evidence: {verdict.evidence} path")
     lines.append(f"detail: {verdict.detail}")
     return lines
-
-# draft note 1865
