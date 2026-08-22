@@ -26,5 +26,3 @@ paste the real output
 **Expected output**
 
 What should have happened instead, and why.
-
-<!-- draft note 1885 -->
