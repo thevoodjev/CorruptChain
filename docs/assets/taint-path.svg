@@ -89,3 +89,20 @@
   <text x="736" y="183" text-anchor="middle" font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff">answer</text>
 
   <!-- s4 clean, row 2 -->
+  <rect x="200" y="240" width="136" height="48" rx="4" fill="#276749" stroke="#1f2933" stroke-width="1.5"/>
+  <text x="268" y="262" text-anchor="middle" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="13" fill="#ffffff">s4 query_baseline</text>
+  <text x="268" y="279" text-anchor="middle" font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff">clean</text>
+
+  <!-- Legend, placed bottom left where it is read. Each entry on its own
+       baseline so no two labels ever share a row. -->
+  <g font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#1f2933">
+    <rect x="32" y="304" width="20" height="14" rx="4" fill="#276749" stroke="#1f2933" stroke-width="1.5"/>
+    <text x="60" y="316">clean step, derived from working data</text>
+    <rect x="32" y="328" width="20" height="14" rx="4" fill="#b23a1e" stroke="#1f2933" stroke-width="1.5"/>
+    <text x="60" y="340">tainted step, downstream of the empty source</text>
+    <line x1="34" y1="359" x2="52" y2="359" stroke="#1f2933" stroke-width="1"/>
+    <text x="60" y="364">declared edge, the agent stated it consumed the source</text>
+    <line x1="34" y1="383" x2="52" y2="383" stroke="#b23a1e" stroke-width="1" stroke-dasharray="5 4"/>
+    <text x="60" y="388">inferred edge from a value match, weaker evidence</text>
+  </g>
+</svg>
