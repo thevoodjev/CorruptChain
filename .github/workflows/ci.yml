@@ -20,5 +20,3 @@ jobs:
         env:
           PYTHONPATH: src
         run: python -m corruptchain verdict samples/clean_trace.json
-
-# draft note 1858
