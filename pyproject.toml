@@ -28,3 +28,9 @@ corruptchain = "corruptchain.cli:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-dir]
+"" = "src"
+
+[project.urls]
+Homepage = "https://github.com/thevoodjev/CorruptChain"
+Source = "https://github.com/thevoodjev/CorruptChain"
