@@ -1,4 +1,10 @@
+<div align="center">
+
+<img src="docs/assets/banner.svg" width="100%" alt="CorruptChain banner: a vertical taint path from a clean step through an empty degraded step to a tainted verdict." />
+
 # CorruptChain
+
+</div>
 
 *Trace how a silent tool failure taints a whole agent run.*
 

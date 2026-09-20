@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Palette reason: a vertical taint path through an agent run. Ink lifted to
+  #e6edf3 carries the structural text on #0d1117. The single accent, corrupt
+  red lifted to #e2543c, marks the degraded source and its verdict. Green is
+  used only on the grounded predecessor, as a state with a label.
+  Contrast on #0d1117: ink 14.6:1, red 5.3:1, green 8.4:1, muted 6.3:1.
+  Grid: every edge and baseline on a multiple of 4. No glow, no blur, no
+  gradients as decoration. Motion: none.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 360" role="img"
+     aria-labelledby="bannerTitle bannerDesc" width="1400" height="360">
+  <title id="bannerTitle">CorruptChain banner</title>
+  <desc id="bannerDesc">CorruptChain, tracing how a silent tool failure taints an
+    agent run. A vertical path shows a clean step, an empty degraded step in red,
+    and downstream steps carrying taint to a tainted verdict.</desc>
+
+  <rect x="0" y="0" width="1400" height="360" rx="16" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+
+  <text x="64" y="96" font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="60" font-weight="700"><tspan fill="#e2543c">corrupt</tspan><tspan fill="#e6edf3">chain</tspan></text>
+
+  <text x="64" y="146" font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="23" fill="#e6edf3">Trace how a silent tool failure taints a whole agent run</text>
+  <text x="64" y="176" font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#8b949e">Dependency graph. Taint paths. Grounded or tainted verdicts.</text>
+
+  <text x="64" y="252" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="15" fill="#8b949e">v1.0.4</text>
+  <text x="150" y="252" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="15" fill="#8b949e">MIT</text>
+  <text x="210" y="252" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="15" fill="#8b949e">Python 3.11+</text>
+
+  <text x="64" y="308" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="16" fill="#e2543c">verdict: tainted (exit 1)</text>
+
+  <rect x="700" y="40" width="636" height="280" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="732" y="76" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="16" fill="#8b949e">trace: contaminated_trace.json</text>
+  <line x1="732" y1="92" x2="1304" y2="92" stroke="#30363d" stroke-width="1"/>
+
+  <rect x="732" y="108" width="120" height="32" rx="6" fill="none" stroke="#3fb37f" stroke-width="1.5"/>
+  <text x="792" y="129" text-anchor="middle" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="14" fill="#e6edf3">s1 ok</text>
+  <line x1="792" y1="140" x2="792" y2="156" stroke="#e6edf3" stroke-width="1"/>
+  <text x="820" y="153" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="13" fill="#8b949e">declared</text>
+
+  <rect x="732" y="160" width="120" height="32" rx="6" fill="none" stroke="#e2543c" stroke-width="1.5"/>
+  <text x="792" y="181" text-anchor="middle" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="14" fill="#e2543c">s2 empty</text>
+  <line x1="792" y1="192" x2="792" y2="208" stroke="#e2543c" stroke-width="1"/>
+  <text x="820" y="205" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="13" fill="#8b949e">declared</text>
+
+  <rect x="732" y="212" width="120" height="32" rx="6" fill="none" stroke="#e2543c" stroke-width="1.5"/>
+  <text x="792" y="233" text-anchor="middle" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="14" fill="#e6edf3">s3 tainted</text>
+  <line x1="852" y1="244" x2="852" y2="260" stroke="#e2543c" stroke-width="1"/>
+  <text x="880" y="257" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="13" fill="#8b949e">inferred</text>
+
+  <rect x="732" y="264" width="120" height="32" rx="6" fill="none" stroke="#e2543c" stroke-width="1.5"/>
+  <text x="792" y="285" text-anchor="middle" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="14" fill="#e6edf3">s6 answer</text>
+
+  <line x1="900" y1="120" x2="900" y2="280" stroke="#30363d" stroke-width="1"/>
+  <text x="920" y="140" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="15" fill="#e6edf3">origin: s2 [empty]</text>
+  <text x="920" y="172" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="15" fill="#e6edf3">path: s2 -&gt; s3 -&gt; s5 -&gt; s6</text>
+  <text x="920" y="204" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="15" fill="#8b949e">evidence: inferred hop</text>
+  <text x="920" y="236" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="15" fill="#8b949e">summary: 1 degraded, 4 tainted of 6</text>
+</svg>
